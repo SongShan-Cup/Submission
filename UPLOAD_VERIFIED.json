@@ -1,0 +1,10 @@
+{
+  "status": "verified",
+  "files": 7748,
+  "bytes": 216542076,
+  "archive_sha256": "dee67d99c8966bb6a47754a3f5db06e82907014e57c5edb956c227471a000527",
+  "pod": "vcjob-2116206198177124354-aclsylqidf-33085-worker-0",
+  "source_directory": "/workspace/minimax-h3-upload-20261101",
+  "persistent_archive": "/root/private_data/minimax-h3-upload-20261101/workspace.tar.gz",
+  "partial_extraction": "/root/private_data/minimax-h3-upload-20261101/partial-extraction"
+}

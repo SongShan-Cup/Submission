@@ -1,0 +1,51 @@
+这是普通 Python 依赖 + 海光 FlashAttention/Triton 的安装包，共 58 个包。
+它不是完整的 MiniMax-H3 环境；尚缺 H3 Diffusers、匹配的 torchvision、
+InfiniCore/InfiniLM 原生构建和九齿开发环境。
+
+一、上传
+在远程平台“个人存储”中新建 h3-upload 目录。
+将本目录中的所有文件上传到该目录，包括全部 h3-python.tar.part-*、
+SHA256SUMS、install_remote.sh、verify_remote.py、manifest.json、本说明。
+每个分块最多 120 MiB；不需要上传本地 public-download、vendor-download、
+local-only、.download-env 或 h3-download-kit.zip。
+
+二、安装
+在远程 Bash 终端执行：
+
+  cd "$IFAB_AFS_HOME/h3-upload"
+  bash install_remote.sh
+
+脚本会校验分块，通过管道直接解包到 /tmp，保留系统海光 torch，
+将包安装到 "$IFAB_AFS_HOME/envs/h3"。它自带初始化 pip 的 wheel，
+不依赖 ensurepip，不需要 sudo，不联网安装。
+
+脚本默认使用服务器 /usr/local/bin/python。
+仅当实际系统解释器路径不同时，用 H3_SYSTEM_PYTHON 指定正确解释器。
+若 /tmp 不可写或空间不足，可通过 H3_TMP_ROOT 指定平台允许的临时目录；
+不要为节省操作直接改到剩余空间不足的 4 GiB AFS。
+
+三、验证（在挂载八卡的终端中执行）
+
+  source "$IFAB_AFS_HOME/envs/h3/activate-h3.sh"
+  python "$IFAB_AFS_HOME/envs/h3/verify_remote.py" --gpu
+
+预期出现 FLASH_FILE_READ_OK、FLASH_SDPA_OK、DEPENDENCY_STAGE_OK。
+这些仅表示本批依赖及小张量注意力测试通过，不等于 H3 全模型已经跑通。
+测试会保留系统 torch，实际读取个人目录的 FlashAttention 扩展，并强制
+使用 Flash SDPA，再与 math SDPA 比较；不加载模型权重。
+
+每次新终端或批作业，都先 source activate-h3.sh。
+如果安装或验证失败，请保留第一段完整异常；不要删除系统 torch。
+
+四、空间
+本批 wheel 展开约 2.79 GiB，上传分块约 0.89 GiB，合计约 3.68 GiB，
+此外还需要已有源码、venv、少量元数据、日志和运行时缓存空间。
+4 GiB AFS 可能比较紧张，先在“个人存储”核对已用量。
+临时解包以及 pip 工作文件位于 /tmp，成功后自动清理该脚本创建的临时目录。
+安装失败时保留临时目录供排查，不会删除上传文件或个人已有目录。
+确认安装成功后，上传介质可由你自行清理；本地仍保留原安装包。
+
+五、后续
+FlashAttention wheel 中包含 flash_attn_2_cuda.so，但没有
+InfiniCore 原生链接所需的另一个 libflash_attention.so。
+后续仍需补齐该原生构建依赖以及 Diffusers/torchvision 等资源。

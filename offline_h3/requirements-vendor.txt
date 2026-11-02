@@ -1,0 +1,3 @@
+# Only from the DTK vendor index, never replace with public CUDA wheels.
+flash-attn==2.6.1+das.opt1.dtk2604.torch290
+triton==3.5.1+das.opt1.dtk2604.torch290

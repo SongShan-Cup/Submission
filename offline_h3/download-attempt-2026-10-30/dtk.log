@@ -1,0 +1,3 @@
+Looking in indexes: https://pypi.sourcefind.cn/release/dtk/
+ERROR: Could not find a version that satisfies the requirement flash-attn==2.6.1+das.opt1.dtk2604.torch290 (from versions: none)
+ERROR: No matching distribution found for flash-attn==2.6.1+das.opt1.dtk2604.torch290

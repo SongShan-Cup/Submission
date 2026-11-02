@@ -1,0 +1,29 @@
+# POD guide pins. Do not silently replace a missing version with latest.
+accelerate==1.14.0
+transformers==5.14.1
+imageio==2.37.4
+huggingface_hub==1.28.0
+safetensors==0.8.0
+regex==2026.5.9
+janus==2.0.0
+xxhash==4.0.2
+av==18.1.0
+einops==0.8.2
+pytest==9.1.1
+
+# Repository imports, media output, comparison, and Python build tools.
+# These ranges are preparation choices, NOT versions validated by the POD guide.
+# pip resolves their transitive dependencies; download.py records exact wheels.
+numpy>=1.24
+Pillow>=10
+soundfile>=0.12
+imageio-ffmpeg>=0.5
+scikit-image
+tqdm
+packaging
+psutil
+setuptools==80.8.0
+wheel
+pybind11
+build
+

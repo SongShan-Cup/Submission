@@ -1,0 +1,17 @@
+{
+  "time": "2026-10-30T03:44:14.192150+00:00",
+  "attempts": [
+    {
+      "source": "https://pypi.org/simple",
+      "package": "janus==2.0.0",
+      "exit_code": 1,
+      "files": []
+    },
+    {
+      "source": "https://pypi.sourcefind.cn/release/dtk/",
+      "package": "flash-attn==2.6.1+das.opt1.dtk2604.torch290",
+      "exit_code": 1,
+      "files": []
+    }
+  ]
+}
