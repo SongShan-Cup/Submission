@@ -53,38 +53,55 @@ void run(void *planned_meta) {
     auto scale = p->scale;
     auto is_causal = p->is_causal;
 
-    const int64_t num_q_heads = q.size(2);
-    const int64_t num_kv_heads = k.size(2);
-    if (q.dim() == 4 && k.dim() == 4 && v.dim() == 4 && q.size(1) == 1 && k.size(1) == 1 && v.size(1) == 1) {
-        at::Tensor value = v;
-        if (num_kv_heads != num_q_heads) {
-            const int64_t repeat = num_q_heads / num_kv_heads;
-            value = v.unsqueeze(3).repeat({1, 1, 1, repeat, 1}).reshape(q.sizes());
-        }
-        out_work.copy_(value);
-        if (out_need_copy_back) {
-            p->out->copy_from(out_work_ic);
-        }
-        return;
+    // Pack equal-length batches for the vendor's FlashAttention varlen API.
+    // Do not materialize the quadratic [B, H, S, S] attention matrix here.
+    if (q.dim() != 4 || k.dim() != 4 || v.dim() != 4) {
+        throw std::runtime_error("Hygon MHA expects [batch, sequence, heads, head_dim]");
+    }
+    // The installed Hygon kernel needs padding for non-power-of-two heads.
+    // Pad Q/K/V to 128 but retain the caller's original softmax scale.
+    const int64_t head_dim = q.size(3);
+    const bool pad_head = head_dim == 72 || head_dim == 96;
+    if (pad_head) {
+        q = at::constant_pad_nd(q, {0, 128 - head_dim}, 0);
+        k = at::constant_pad_nd(k, {0, 128 - head_dim}, 0);
+        v = at::constant_pad_nd(v, {0, 128 - head_dim}, 0);
+    }
+    // The vendor kernel is incorrect when two inputs have identical addresses.
+    // Keep distinct buffers even for the valid Q=K=V self-attention case.
+    if (q.data_ptr() == k.data_ptr()) {
+        k = k.clone();
+    }
+    if (v.data_ptr() == q.data_ptr() || v.data_ptr() == k.data_ptr()) {
+        v = v.clone();
+    }
+    const int batch = q.size(0);
+    const int q_len = q.size(1);
+    const int k_len = k.size(1);
+    if (batch != k.size(0) || batch != v.size(0) || k_len != v.size(1)) {
+        throw std::runtime_error("Hygon MHA batch/sequence dimensions do not match");
+    }
+    auto q_packed = q.reshape({batch * q_len, q.size(2), q.size(3)});
+    auto k_packed = k.reshape({batch * k_len, k.size(2), k.size(3)});
+    auto v_packed = v.reshape({batch * k_len, v.size(2), v.size(3)});
+    auto cu_q = at::arange(batch + 1, q.options().dtype(at::kInt)) * q_len;
+    auto cu_k = at::arange(batch + 1, k.options().dtype(at::kInt)) * k_len;
+    std::optional<at::Tensor> out = pad_head
+        ? at::empty_like(q_packed) : out_work.reshape(q_packed.sizes());
+    std::optional<at::Tensor> seqused = std::nullopt;
+    std::optional<const at::Tensor> leftpad = std::nullopt;
+    std::optional<at::Tensor> block_table = std::nullopt;
+    auto alibi = p->alibi_slopes
+        ? std::optional<at::Tensor>(infinicore::adaptor::to_aten_tensor(*p->alibi_slopes))
+        : std::nullopt;
+    flash::vllm_mha_varlen_fwd(
+        q_packed, k_packed, v_packed, out, cu_q, cu_k, seqused, leftpad,
+        block_table, alibi, q_len, k_len, 0.0f, scale, false, is_causal,
+        -1, -1, 0.0f, false, std::nullopt);
+    if (pad_head) {
+        out_work.copy_(out->narrow(2, 0, head_dim).reshape(out_work.sizes()));
     }
 
-    at::Tensor k_attn = k;
-    at::Tensor v_attn = v;
-    if (num_kv_heads != num_q_heads) {
-        const int64_t repeat = num_q_heads / num_kv_heads;
-        k_attn = k.unsqueeze(3).repeat({1, 1, 1, repeat, 1}).reshape(q.sizes());
-        v_attn = v.unsqueeze(3).repeat({1, 1, 1, repeat, 1}).reshape(q.sizes());
-    }
-
-    auto attn_weight = at::matmul(q.permute({0, 2, 1, 3}), k_attn.permute({0, 2, 3, 1})) * scale;
-    if (is_causal) {
-        auto mask = at::tril(at::ones_like(attn_weight), -1).flip({-2, -1});
-        auto neg_inf = at::full_like(attn_weight, -std::numeric_limits<float>::infinity());
-        attn_weight = at::where(mask == 1, neg_inf, attn_weight);
-    }
-    auto attn = at::softmax(attn_weight, -1);
-    auto result = at::matmul(attn, v_attn.permute({0, 2, 1, 3})).permute({0, 2, 1, 3});
-    out_work.copy_(result);
     if (out_need_copy_back) {
         p->out->copy_from(out_work_ic);
     }

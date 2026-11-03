@@ -301,12 +301,11 @@ target("infinicore_cpp_api")
             local flash_dir_hygon = path.directory(flash_so_hygon)
             local flash_name_hygon = path.filename(flash_so_hygon)
             local flash_lib_dir_hygon = path.join(FLASH_ATTN_ROOT, "flash_attn", "lib")
-            target:add(
-                "shflags",
-                "-Wl,--no-as-needed -L" .. flash_lib_dir_hygon .. " -l:libflash_attention.so -Wl,-rpath," .. flash_lib_dir_hygon,
-                "-L" .. flash_dir_hygon .. " -l:" .. flash_name_hygon .. " -Wl,-rpath," .. flash_dir_hygon,
-                {force = true}
-            )
+            -- Some vendor wheels embed the kernels in the extension itself.
+            if os.isfile(path.join(flash_lib_dir_hygon, "libflash_attention.so")) then
+                target:add("shflags", "-Wl,--no-as-needed -L" .. flash_lib_dir_hygon .. " -l:libflash_attention.so -Wl,-rpath," .. flash_lib_dir_hygon, {force = true})
+            end
+            target:add("shflags", "-Wl,--no-as-needed -L" .. flash_dir_hygon .. " -l:" .. flash_name_hygon .. " -Wl,-rpath," .. flash_dir_hygon, {force = true})
         end)
     end
 target_end()

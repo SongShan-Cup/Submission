@@ -1,0 +1,10 @@
+/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-fix/check_attention.py:16: UserWarning: 1Torch was not compiled with memory efficient attention. (Triggered internally at /home/pytorch/aten/src/ATen/native/transformers/hip/sdp_utils.cpp:790.)
+  expected=torch.nn.functional.scaled_dot_product_attention(q.float().transpose(1,2),k.float().repeat_interleave(h//hk,2).transpose(1,2),v.float().repeat_interleave(h//hk,2).transpose(1,2),is_causal=causal).transpose(1,2)
+noncausal {'max_abs_error': 0.005620121955871582, 'pass': True}
+causal {'max_abs_error': 0.026837587356567383, 'pass': True}
+gqa {'max_abs_error': 0.00700831413269043, 'pass': True}
+supplemental_head96 {'max_abs_error': 0.0068798065185546875, 'pass': True}
+vision_head72 {'max_abs_error': 0.011047124862670898, 'pass': True}
+self_attention128 {'max_abs_error': 0.031120777130126953, 'pass': True}
+self_attention72 {'max_abs_error': 0.044310569763183594, 'pass': True}
+{'sequence': 32768, 'heads': 7, 'peak_torch_memory_MiB': 397.3955078125, 'finite': True, 'sampled_max_abs_error': 0.00028137117624282837, 'pass': True}

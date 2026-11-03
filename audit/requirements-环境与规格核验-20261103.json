@@ -1,0 +1,240 @@
+{
+  "dependency_checks": {
+    "MiniMax-H3/requirements.txt": [
+      {
+        "requirement": "torch>=2.4.0",
+        "installed": "2.9.0+das.opt1.dtk2604",
+        "status": "ok"
+      },
+      {
+        "requirement": "diffusers>=0.32.2",
+        "installed": "0.40.0.dev0",
+        "status": "ok"
+      },
+      {
+        "requirement": "transformers>=4.45.0",
+        "installed": "5.14.1",
+        "status": "ok"
+      },
+      {
+        "requirement": "safetensors>=0.4.3",
+        "installed": "0.8.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "accelerate>=0.34.0",
+        "installed": "1.14.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "huggingface_hub>=0.25.0",
+        "installed": "1.28.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "numpy>=1.24.0",
+        "installed": "1.26.4",
+        "status": "ok"
+      },
+      {
+        "requirement": "Pillow>=10.0.0",
+        "installed": "13.0.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "soundfile>=0.12.0",
+        "installed": "0.14.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "imageio>=2.34.0",
+        "installed": "2.37.4",
+        "status": "ok"
+      },
+      {
+        "requirement": "imageio-ffmpeg>=0.5.0",
+        "installed": "0.7.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "av>=11.0.0",
+        "installed": "18.1.0",
+        "status": "ok"
+      }
+    ],
+    "offline_h3/requirements-public.txt": [
+      {
+        "requirement": "accelerate==1.14.0",
+        "installed": "1.14.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "transformers==5.14.1",
+        "installed": "5.14.1",
+        "status": "ok"
+      },
+      {
+        "requirement": "imageio==2.37.4",
+        "installed": "2.37.4",
+        "status": "ok"
+      },
+      {
+        "requirement": "huggingface_hub==1.28.0",
+        "installed": "1.28.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "safetensors==0.8.0",
+        "installed": "0.8.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "regex==2026.5.9",
+        "installed": "2026.5.9",
+        "status": "ok"
+      },
+      {
+        "requirement": "janus==2.0.0",
+        "installed": "2.0.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "xxhash==4.0.2",
+        "installed": "4.0.2",
+        "status": "ok"
+      },
+      {
+        "requirement": "av==18.1.0",
+        "installed": "18.1.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "einops==0.8.2",
+        "installed": "0.8.2",
+        "status": "ok"
+      },
+      {
+        "requirement": "pytest==9.1.1",
+        "installed": "9.1.1",
+        "status": "ok"
+      },
+      {
+        "requirement": "numpy>=1.24",
+        "installed": "1.26.4",
+        "status": "ok"
+      },
+      {
+        "requirement": "Pillow>=10",
+        "installed": "13.0.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "soundfile>=0.12",
+        "installed": "0.14.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "imageio-ffmpeg>=0.5",
+        "installed": "0.7.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "scikit-image",
+        "installed": "0.26.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "tqdm",
+        "installed": "4.70.1",
+        "status": "ok"
+      },
+      {
+        "requirement": "packaging",
+        "installed": "26.3",
+        "status": "ok"
+      },
+      {
+        "requirement": "psutil",
+        "installed": "7.2.2",
+        "status": "ok"
+      },
+      {
+        "requirement": "setuptools==80.8.0",
+        "installed": "80.8.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "wheel",
+        "installed": "0.48.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "pybind11",
+        "installed": "3.1.0",
+        "status": "ok"
+      },
+      {
+        "requirement": "build",
+        "installed": "1.6.1",
+        "status": "ok"
+      }
+    ],
+    "offline_h3/requirements-vendor.txt": [
+      {
+        "requirement": "flash-attn==2.6.1+das.opt1.dtk2604.torch290",
+        "installed": "2.6.1+das.opt1.dtk2604.torch290",
+        "status": "ok"
+      },
+      {
+        "requirement": "triton==3.5.1+das.opt1.dtk2604.torch290",
+        "installed": "3.5.1+das.opt1.dtk2604.torch290",
+        "status": "ok"
+      }
+    ]
+  },
+  "media": {
+    "fl2va_50step.mp4": [
+      {
+        "type": "video",
+        "codec": "h264",
+        "width": 768,
+        "height": 928,
+        "frames": 124,
+        "fps": "24",
+        "pixel_format": "yuv420p"
+      },
+      {
+        "type": "audio",
+        "codec": "aac",
+        "sample_rate": 32000,
+        "layout": "<av.AudioLayout 'stereo'>",
+        "duration_seconds": 5.175
+      }
+    ],
+    "fl2va_legacy_50step.mp4": [
+      {
+        "type": "video",
+        "codec": "h264",
+        "width": 768,
+        "height": 928,
+        "frames": 124,
+        "fps": "24",
+        "pixel_format": "yuv420p"
+      },
+      {
+        "type": "audio",
+        "codec": "aac",
+        "sample_rate": 32000,
+        "layout": "<av.AudioLayout 'stereo'>",
+        "duration_seconds": 5.175
+      }
+    ]
+  },
+  "nine_toothed": {
+    "installed": "0.26.0",
+    "compiled_enabled": false,
+    "generated_directory_exists": false,
+    "flash_attention_dispatch_hygon_registered": false
+  },
+  "requirements_sha256": "08772ec9c66cb6a5d0dbbba1d5d2521e0c61cda7dbe4dc73871d560a3427f448"
+}

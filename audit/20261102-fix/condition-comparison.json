@@ -1,0 +1,20 @@
+{
+  "image": {
+    "tokens": 708,
+    "relative_rmse": 0.7001631005406513,
+    "cosine": 0.721623472391361,
+    "token_relative_rmse_median": 0.03013339592298715,
+    "token_relative_rmse_max": 1.0285704785069496,
+    "native_max": 17536.0,
+    "reference_max": 20736.0
+  },
+  "text_only": {
+    "tokens": 12,
+    "relative_rmse": 0.004071185850310631,
+    "cosine": 0.9999995769576885,
+    "token_relative_rmse_median": 0.011686712079389972,
+    "token_relative_rmse_max": 0.02572886906510364,
+    "native_max": 16064.0,
+    "reference_max": 16000.0
+  }
+}

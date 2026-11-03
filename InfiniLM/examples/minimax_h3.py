@@ -25,11 +25,6 @@ from diffusers.modular_pipelines.minimax_h3 import (
 )
 from diffusers.utils import load_image
 from diffusers.utils.export_utils import encode_video
-from infinilm.multimodal.minimax_h3 import (
-    MiniMaxH3ConditionEncoder,
-    MiniMaxH3DiffusersAdapter,
-    MiniMaxH3TransformerRunner,
-)
 from safetensors.torch import load_file
 from transformers import Qwen3VLForConditionalGeneration
 
@@ -504,8 +499,47 @@ def load_pipeline(
                     legacy_transformer_devices,
                     legacy_memory_fraction,
                 )
+        # Explicitly use the installed memory-efficient backend on HIP. The native
+        # SDPA math fallback materializes a prohibitively large attention matrix.
+        if torch.version.hip is not None:
+            # Vendor ROCm wheels may not pass Diffusers' CUDA/version gate even
+            # though their public inference functions are available. Bind only
+            # the single-device inference functions used by this model.
+            from flash_attn import flash_attn_func, flash_attn_varlen_func
+            from diffusers.models import attention_dispatch
+
+            def hygon_flash_attention(q, k, v, **kwargs):
+                head_dim = q.shape[-1]
+                if head_dim in (72, 96):
+                    if kwargs.get("softmax_scale") is None:
+                        kwargs["softmax_scale"] = head_dim**-0.5
+                    q, k, v = (
+                        torch.nn.functional.pad(x, (0, 128 - head_dim))
+                        for x in (q, k, v)
+                    )
+                if q.data_ptr() == k.data_ptr():
+                    k = k.clone()
+                if v.data_ptr() in (q.data_ptr(), k.data_ptr()):
+                    v = v.clone()
+                output = flash_attn_func(q, k, v, **kwargs)
+                if isinstance(output, tuple):
+                    return (output[0][..., :head_dim], *output[1:])
+                return output[..., :head_dim]
+
+            attention_dispatch.flash_attn_func = hygon_flash_attention
+            attention_dispatch.flash_attn_varlen_func = flash_attn_varlen_func
+            attention_dispatch._CAN_USE_FLASH_ATTN = True
+            transformer.set_attention_backend("flash")
+            print("[model] Legacy H3 attention backend: flash")
         install_legacy_output_device_hooks(transformer)
     else:
+        # Avoid loading native HIP libraries in the PyTorch reference path.
+        from infinilm.multimodal.minimax_h3 import (
+            MiniMaxH3ConditionEncoder,
+            MiniMaxH3DiffusersAdapter,
+            MiniMaxH3TransformerRunner,
+        )
+
         with timings.measure(
             "model.condition_encoder_create_and_load", synchronize=True
         ):
@@ -542,8 +576,9 @@ def load_pipeline(
         )
         execution_device = pipe._execution_device
         print(f"[model] Diffusers execution device: {execution_device}")
-        pipe.vae.to(device=execution_device, dtype=DTYPE)
-        pipe.audio_vae.to(device=execution_device, dtype=DTYPE)
+        pipe.vae.to(device=execution_device)
+        pipe.audio_vae.to(device=execution_device)
+        print(f"[model] VAE precision: video={pipe.vae.dtype}, audio={pipe.audio_vae.dtype}")
         pipe.vae.requires_grad_(False)
         pipe.audio_vae.requires_grad_(False)
     return pipe, text_encoder, transformer

@@ -398,6 +398,8 @@ class MiniMaxH3ConditionEncoder(Qwen3VLForConditionalGeneration):
     def encode(self, model_inputs: Mapping[str, Any]) -> torch.Tensor:
         native_inputs = self._prepare_native_inputs(model_inputs)
         input_ids = native_inputs.pop("input_ids")
+        # Native worker streams must observe preprocessing on the Torch stream.
+        torch.cuda.current_stream(self.torch_device).synchronize()
         output = self.engine.forward_raw(input_ids, **native_inputs)
         return MiniMaxH3TransformerRunner._to_torch(output["logits"], self.torch_device)
 
@@ -498,6 +500,8 @@ class MiniMaxH3TransformerRunner:
         native_inputs = {
             name: self._to_infinicore(tensor) for name, tensor in torch_inputs.items()
         }
+        # Includes the freshly constructed rotary cache and contiguous copies.
+        torch.cuda.current_stream(inputs.video_hidden_states.device).synchronize()
         output = self.engine.forward_raw(None, **native_inputs)
         video = output["logits"]
         audio = output["hidden_states"]

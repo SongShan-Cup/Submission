@@ -438,6 +438,9 @@ void RankWorker::thread_loop() {
                         // Diffusion-style models return dense predictions and do
                         // not have a vocabulary dimension to sample from.
                         if (model_config_->get_or<bool>("skip_sampling", false)) {
+                            // Publish dense outputs only after this rank's GPU work
+                            // completes; the caller copies them on another stream.
+                            infinicore::context::syncStream();
                             auto output_ids = infinicore::Tensor::empty(
                                 {0}, infinicore::DataType::I64,
                                 infinicore::Device::cpu());

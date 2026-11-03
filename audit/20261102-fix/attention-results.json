@@ -1,0 +1,38 @@
+{
+  "noncausal": {
+    "max_abs_error": 0.005620121955871582,
+    "pass": true
+  },
+  "causal": {
+    "max_abs_error": 0.026837587356567383,
+    "pass": true
+  },
+  "gqa": {
+    "max_abs_error": 0.00700831413269043,
+    "pass": true
+  },
+  "supplemental_head96": {
+    "max_abs_error": 0.0068798065185546875,
+    "pass": true
+  },
+  "vision_head72": {
+    "max_abs_error": 0.011047124862670898,
+    "pass": true
+  },
+  "self_attention128": {
+    "max_abs_error": 0.031120777130126953,
+    "pass": true
+  },
+  "self_attention72": {
+    "max_abs_error": 0.044310569763183594,
+    "pass": true
+  },
+  "long_sequence": {
+    "sequence": 32768,
+    "heads": 7,
+    "peak_torch_memory_MiB": 397.3955078125,
+    "finite": true,
+    "sampled_max_abs_error": 0.00028137117624282837,
+    "pass": true
+  }
+}

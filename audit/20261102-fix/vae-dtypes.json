@@ -1,0 +1,8 @@
+{
+  "vae": {
+    "torch.float32": 703
+  },
+  "audio_vae": {
+    "torch.float32": 832
+  }
+}

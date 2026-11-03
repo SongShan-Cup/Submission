@@ -1,0 +1,16 @@
+{
+  "fl2va_legacy_50step.mp4": {
+    "width": 768,
+    "height": 928,
+    "frames": 124,
+    "fps": "24",
+    "decoded_frames": 124
+  },
+  "fl2va_50step.mp4": {
+    "width": 768,
+    "height": 928,
+    "frames": 124,
+    "fps": "24",
+    "decoded_frames": 124
+  }
+}

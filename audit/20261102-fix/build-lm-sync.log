@@ -1,0 +1,6 @@
+[0m[38;5;2;1m[  6%]:[0m cache compiling.release csrc/engine/rank_worker.cpp[0m
+[0m[38;5;2;1m[ 93%]:[0m [38;5;5;1mlinking.release _infinilm.cpython-311-x86_64-linux-gnu.so[0m
+[0m[38;5;2;1m[100%]:[0m [38;5;2;1mbuild ok, spent 53.624s[0m
+installing _infinilm ..
+installing _infinilm to /public/home/aclsylqidf/Projects/minimax-h3-dev/InfiniLM/python/infinilm ..
+[0m[38;5;2;1minstall ok![0m

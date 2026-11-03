@@ -18,6 +18,7 @@
 #include <algorithm>
 #include <cmath>
 #include <cstddef>
+#include <cstdlib>
 #include <stdexcept>
 #include <string>
 #include <tuple>
@@ -55,8 +56,11 @@ infinicore::Tensor apply_adaln(const infinicore::Tensor &normalized,
                                const infinicore::Tensor &scale,
                                const infinicore::Tensor &shift) {
     // Preserve the reference's operation order: x * (1 + scale) + shift.
-    auto one = infinicore::Tensor::ones({1}, scale->dtype(), scale->device());
-    auto scaled = infinicore::op::mul(normalized, infinicore::op::add(one, scale));
+    // Add currently requires equal shapes. Expand a scalar using zero strides
+    // so this does not allocate a sequence-sized tensor of ones.
+    auto one = infinicore::Tensor::ones({1}, scale->dtype(), scale->device())
+                   ->as_strided(scale->shape(), std::vector<ptrdiff_t>(scale->shape().size(), 0));
+    auto scaled = infinicore::op::mul(normalized, infinicore::op::add(scale, one));
     return infinicore::op::add(scaled, shift);
 }
 
@@ -539,6 +543,11 @@ InfinilmModel::Output MiniMaxH3Transformer::forward(const Input &input) const {
         hidden_states, 1, input.audio_indices.value(), audio_embeds);
 
     auto temb = time_embedder_->forward(input.timestep.value());
+    const char *trace_stage_env = std::getenv("MINIMAX_H3_TRACE_STAGE");
+    const std::string trace_stage = trace_stage_env ? trace_stage_env : "";
+    if (trace_stage == "embeddings") {
+        return {hidden_states, temb};
+    }
     auto timestep_indices = input.timestep_indices.value();
     auto token_tags = input.token_tags.value();
     auto timestep_indices_x2 = infinicore::op::add(timestep_indices, timestep_indices);
@@ -550,6 +559,9 @@ InfinilmModel::Output MiniMaxH3Transformer::forward(const Input &input) const {
         hidden_states = transformer_blocks_[i]->forward(
             hidden_states, temb, adaln_indices, rope_, rope_positions,
             input.rotary_cos_sin_cache);
+        if (trace_stage == "block:" + std::to_string(i)) {
+            return {hidden_states, temb};
+        }
     }
 
     auto normalized = norm_out_->forward(hidden_states, temb, timestep_indices);

@@ -1,0 +1,41 @@
+{
+  "video_same_input": {
+    "shape": [
+      1,
+      26448,
+      96
+    ],
+    "native_finite": true,
+    "reference_finite": true,
+    "max_abs_error": 0.9732442498207092,
+    "rmse": 0.044766106833118914,
+    "relative_rmse": 0.024419863288220968,
+    "cosine": 0.9997019059967966
+  },
+  "audio_same_input": {
+    "shape": [
+      1,
+      414,
+      32
+    ],
+    "native_finite": true,
+    "reference_finite": true,
+    "max_abs_error": 0.09143475443124771,
+    "rmse": 0.030378753493947325,
+    "relative_rmse": 0.028173032805498786,
+    "cosine": 0.9996040096113595
+  },
+  "condition_encoder": {
+    "shape": [
+      1,
+      708,
+      5120
+    ],
+    "native_finite": true,
+    "reference_finite": true,
+    "max_abs_error": 20534.0,
+    "rmse": 11.257499197026725,
+    "relative_rmse": 0.7080363634481176,
+    "cosine": 0.7156324848081711
+  }
+}

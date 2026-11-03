@@ -5,6 +5,7 @@
 #include <ATen/ATen.h>
 #include <c10/util/Optional.h>
 #include <dlfcn.h>
+#include <cstdlib>
 #include <optional>
 #include <stdexcept>
 #include <string>
@@ -71,8 +72,21 @@ void *resolve_flash_symbol(const char *name) {
 }
 
 void *resolve_flash_extension_symbol(const char *name) {
+    if (void *sym = dlsym(RTLD_DEFAULT, name)) {
+        return sym;
+    }
     static std::string last_error;
     static void *handle = [&]() -> void * {
+        // The interpreter ABI and install prefix vary between deployments.
+        const char *configured = std::getenv("FA_SO_PATH");
+        if (configured && *configured) {
+            if (void *h = dlopen(configured, RTLD_NOW | RTLD_GLOBAL)) {
+                return h;
+            }
+            if (const char *err = dlerror()) {
+                last_error += std::string(configured) + ": " + err + "; ";
+            }
+        }
         const char *candidates[] = {
             "flash_attn_2_cuda.cpython-310-x86_64-linux-gnu.so",
             "/usr/local/lib/python3.10/dist-packages/flash_attn_2_cuda.cpython-310-x86_64-linux-gnu.so",

@@ -1,5 +1,6 @@
 #include "infinicore/ops/mha.hpp"
 #include "../../utils.hpp"
+#include <stdexcept>
 
 namespace infinicore::op {
 
@@ -13,6 +14,11 @@ MultiheadAttention::MultiheadAttention(Tensor out,
                                        float scale,
                                        bool is_causal) {
     INFINICORE_ASSERT_TENSORS_SAME_DEVICE(out, q, k, v);
+    if (!plan_dispatcher().lookup(out->device().getType())
+        || !run_dispatcher().lookup(out->device().getType())
+        || !cleanup_dispatcher().lookup(out->device().getType())) {
+        throw std::runtime_error("MHA backend is not registered for this device; rebuild with ATen and FlashAttention enabled");
+    }
     INFINICORE_GRAPH_OP_DISPATCH(out->device().getType(),
                                  out, q, k, v, alibi_slopes, scale, is_causal);
 }
