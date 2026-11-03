@@ -1,0 +1,20 @@
+{
+  "packages": {
+    "torch": "2.9.0+das.opt1.dtk2604",
+    "triton": "3.5.1+das.opt1.dtk2604.torch290",
+    "ninetoothed": "0.26.0"
+  },
+  "files": {
+    "InfiniCore/src/infinicore/ops/multi_head_attention/ninetoothed/attention.py": "26594ab9f887127ac362fc27005c1b5fc81d8a07edb313ec3f74cdecdd4d01bc",
+    "InfiniCore/src/infinicore/ops/multi_head_attention/ninetoothed/build_hygon.py": "074c50adc865c604493f8c144fbc1e47d2e411d5d6092a90ee1d747377349f2b",
+    "InfiniCore/src/infinicore/ops/multi_head_attention/hygon/mha_ninetoothed_hygon.cc": "c70d1451717e4f2a5b0fa793be2903afc8d98c3b178382861b08b3df8981eb4d",
+    "InfiniCore/src/infinicore/ops/multi_head_attention/hygon/mha_flashattn_hygon.cc": "143d0c201e5789e1a1364e89fa8da06b8c43a52df29c19c87224709bc124d96b",
+    "InfiniCore/xmake.lua": "aeb7ed2e90ffdb69336f0082ffa263c99b56f6170c3b280ffb60f714bd5eb13d",
+    "remote-install/h3-ninetoothed/native/lib/libinfinirt.so": "1993bdeba63c137758fc2cb9d8ae772d6fdeb94999de260373ab52e1f4c7a467",
+    "remote-install/h3-ninetoothed/native/lib/_infinilm.cpython-311-x86_64-linux-gnu.so": "6d301a75c394d8e3e18e67527e607b5208761c4caea2f231cbca29ca1f3d8c87",
+    "remote-install/h3-ninetoothed/native/lib/libh3_ninetoothed.so": "1e809373c2f8796693525e31e97d89d974a1e8909036930d78bb6e794b1cc6f0",
+    "remote-install/h3-ninetoothed/native/lib/libinfinicore_cpp_api.so": "a1cf275bff2aeb3660305d8c4c9af279612499bb5a3f78e4361417f6c1b9febd",
+    "remote-install/h3-ninetoothed/native/lib/libinfiniccl.so": "81183241721bbacca06afa8a269ec3c2bbe80a09f74527a6690d53d4a35d2bf3",
+    "remote-install/h3-ninetoothed/native/lib/libinfiniop.so": "84100b1bae7fd037b57534846910551df5041488da3734e8be06de7e6892d56f"
+  }
+}

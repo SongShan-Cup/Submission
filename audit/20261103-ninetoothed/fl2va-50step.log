@@ -1,0 +1,191 @@
+[model] Loading modular components from: /public/home/aclsylqidf/shared/MiniMax-H3/diffusers
+[model] Loading fl2va transformer from:  /public/home/aclsylqidf/shared/MiniMax-H3/diffusers/transformer
+[model] Backend: InfiniLM
+[model] InfiniLM TP devices: [0, 1, 2, 3, 4, 5, 6, 7]
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+RCCL version : 2.22.3-HEAD:19c80f7
+HIP version  : 6.3.26102-a22a51fa
+ROCm version : 6.3.3.0-0-c1d64df
+Hostname     : vcjob-2116206198177124354-aclsylqidf-33085-worker-0
+Librccl path : /opt/dtk/lib/librccl.so.1
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106841 [5] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1839 NCCL WARN Unable to obtain the pciPath[NULL] or name[eth0] attributes from NetProperties.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106842 [6] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106843 [7] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106836 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106838 [2] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106839 [3] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106837 [1] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106841 [5] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106840 [4] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+[2026-11-03 23:37:41.280] [info] [:] Intra-node TP communicator established: node_rank=0, local_ranks=8
+ load weights ......
+Found index file: /public/home/aclsylqidf/shared/MiniMax-H3/diffusers/text_encoder/model.safetensors.index.json. Loading shards by index.
+Processing files:   0%|          | 0/14 [00:00<?, ?it/s]                                                        Processing: model-00010-of-00014.safetensors
+Processing files:   0%|          | 0/14 [00:00<?, ?it/s]Processing files:   7%|▋         | 1/14 [00:00<00:08,  1.56it/s]                                                                Processing: model-00011-of-00014.safetensors
+Processing files:   7%|▋         | 1/14 [00:00<00:08,  1.56it/s]Processing files:  14%|█▍        | 2/14 [00:00<00:05,  2.38it/s]                                                                Processing: model-00013-of-00014.safetensors
+Processing files:  14%|█▍        | 2/14 [00:00<00:05,  2.38it/s]Processing files:  21%|██▏       | 3/14 [00:01<00:03,  3.43it/s]                                                                Processing: model-00004-of-00014.safetensors
+Processing files:  21%|██▏       | 3/14 [00:01<00:03,  3.43it/s]Processing files:  29%|██▊       | 4/14 [00:01<00:04,  2.44it/s]                                                                Processing: model-00012-of-00014.safetensors
+Processing files:  29%|██▊       | 4/14 [00:01<00:04,  2.44it/s]Processing files:  36%|███▌      | 5/14 [00:01<00:02,  3.21it/s]                                                                Processing: model-00009-of-00014.safetensors
+Processing files:  36%|███▌      | 5/14 [00:01<00:02,  3.21it/s]Processing files:  43%|████▎     | 6/14 [00:02<00:03,  2.29it/s]                                                                Processing: model-00003-of-00014.safetensors
+Processing files:  43%|████▎     | 6/14 [00:02<00:03,  2.29it/s]Processing files:  50%|█████     | 7/14 [00:03<00:03,  1.98it/s]                                                                Processing: model-00007-of-00014.safetensors
+Processing files:  50%|█████     | 7/14 [00:03<00:03,  1.98it/s]Processing files:  57%|█████▋    | 8/14 [00:03<00:03,  1.80it/s]                                                                Processing: model-00002-of-00014.safetensors
+Processing files:  57%|█████▋    | 8/14 [00:03<00:03,  1.80it/s]Processing files:  64%|██████▍   | 9/14 [00:04<00:02,  1.80it/s]                                                                Processing: model-00005-of-00014.safetensors
+Processing files:  64%|██████▍   | 9/14 [00:04<00:02,  1.80it/s]Processing files:  71%|███████▏  | 10/14 [00:04<00:02,  1.76it/s]                                                                 Processing: model-00008-of-00014.safetensors
+Processing files:  71%|███████▏  | 10/14 [00:04<00:02,  1.76it/s]Processing files:  79%|███████▊  | 11/14 [00:05<00:01,  1.74it/s]                                                                 Processing: model-00014-of-00014.safetensors
+Processing files:  79%|███████▊  | 11/14 [00:05<00:01,  1.74it/s]Processing files:  86%|████████▌ | 12/14 [00:06<00:01,  1.47it/s]                                                                 Processing: model-00006-of-00014.safetensors
+Processing files:  86%|████████▌ | 12/14 [00:06<00:01,  1.47it/s]Processing files:  93%|█████████▎| 13/14 [00:07<00:00,  1.47it/s]                                                                 Processing: model-00001-of-00014.safetensors
+Processing files:  93%|█████████▎| 13/14 [00:07<00:00,  1.47it/s]Processing files: 100%|██████████| 14/14 [00:08<00:00,  1.12it/s]Processing files: 100%|██████████| 14/14 [00:08<00:00,  1.65it/s]
+ load weights over! 8662.43028640747 ms 
+
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:170 NCCL WARN NUMA auto balancing enabled which can lead to variability in the RCCL performance! Disable by "sudo sysctl kernel.numa_balancing=0"
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:106028 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/init.cc:191 NCCL WARN Missing "iommu=pt" from kernel command line which can lead to system instablity or hang!
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:107056 [1] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:107057 [2] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:107055 [0] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:107062 [7] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:107058 [3] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:107060 [5] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:107059 [4] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+
+vcjob-2116206198177124354-aclsylqidf-33085-worker-0:106028:107061 [6] /data/jenkins_workspace/workspace/rccl_release/build/hipify/src/graph/xml.cc:1211 NCCL WARN No IB NIC found, the generation of the basic topology has been terminated.
+[2026-11-03 23:37:57.249] [info] [:] Intra-node TP communicator established: node_rank=0, local_ranks=8
+ load weights ......
+Found index file: /public/home/aclsylqidf/shared/MiniMax-H3/diffusers/transformer/diffusion_pytorch_model.safetensors.index.json. Loading shards by index.
+Processing files:   0%|          | 0/14 [00:00<?, ?it/s]                                                        Processing: diffusion_pytorch_model-00008-of-00014.safetensors
+Processing files:   0%|          | 0/14 [00:00<?, ?it/s]Processing files:   7%|▋         | 1/14 [00:00<00:08,  1.54it/s]                                                                Processing: diffusion_pytorch_model-00002-of-00014.safetensors
+Processing files:   7%|▋         | 1/14 [00:00<00:08,  1.54it/s]Processing files:  14%|█▍        | 2/14 [00:01<00:06,  1.83it/s]                                                                Processing: diffusion_pytorch_model-00006-of-00014.safetensors
+Processing files:  14%|█▍        | 2/14 [00:01<00:06,  1.83it/s]Processing files:  21%|██▏       | 3/14 [00:01<00:06,  1.74it/s]                                                                Processing: diffusion_pytorch_model-00010-of-00014.safetensors
+Processing files:  21%|██▏       | 3/14 [00:01<00:06,  1.74it/s]Processing files:  29%|██▊       | 4/14 [00:02<00:05,  1.74it/s]                                                                Processing: diffusion_pytorch_model-00004-of-00014.safetensors
+Processing files:  29%|██▊       | 4/14 [00:02<00:05,  1.74it/s]Processing files:  36%|███▌      | 5/14 [00:02<00:05,  1.69it/s]                                                                Processing: diffusion_pytorch_model-00005-of-00014.safetensors
+Processing files:  36%|███▌      | 5/14 [00:02<00:05,  1.69it/s]Processing files:  43%|████▎     | 6/14 [00:03<00:04,  1.68it/s]                                                                Processing: diffusion_pytorch_model-00007-of-00014.safetensors
+Processing files:  43%|████▎     | 6/14 [00:03<00:04,  1.68it/s]Processing files:  50%|█████     | 7/14 [00:04<00:04,  1.68it/s]                                                                Processing: diffusion_pytorch_model-00012-of-00014.safetensors
+Processing files:  50%|█████     | 7/14 [00:04<00:04,  1.68it/s]Processing files:  57%|█████▋    | 8/14 [00:04<00:03,  1.68it/s]                                                                Processing: diffusion_pytorch_model-00014-of-00014.safetensors
+Processing files:  57%|█████▋    | 8/14 [00:04<00:03,  1.68it/s]Processing files:  64%|██████▍   | 9/14 [00:05<00:02,  1.71it/s]                                                                Processing: diffusion_pytorch_model-00003-of-00014.safetensors
+Processing files:  64%|██████▍   | 9/14 [00:05<00:02,  1.71it/s]Processing files:  71%|███████▏  | 10/14 [00:05<00:02,  1.68it/s]                                                                 Processing: diffusion_pytorch_model-00009-of-00014.safetensors
+Processing files:  71%|███████▏  | 10/14 [00:05<00:02,  1.68it/s]Processing files:  79%|███████▊  | 11/14 [00:06<00:01,  1.69it/s]                                                                 Processing: diffusion_pytorch_model-00001-of-00014.safetensors
+Processing files:  79%|███████▊  | 11/14 [00:06<00:01,  1.69it/s]Processing files:  86%|████████▌ | 12/14 [00:07<00:01,  1.45it/s]                                                                 Processing: diffusion_pytorch_model-00013-of-00014.safetensors
+Processing files:  86%|████████▌ | 12/14 [00:07<00:01,  1.45it/s]Processing files:  93%|█████████▎| 13/14 [00:07<00:00,  1.52it/s]                                                                 Processing: diffusion_pytorch_model-00011-of-00014.safetensors
+Processing files:  93%|█████████▎| 13/14 [00:07<00:00,  1.52it/s]Processing files: 100%|██████████| 14/14 [00:08<00:00,  1.59it/s]Processing files: 100%|██████████| 14/14 [00:08<00:00,  1.64it/s]
+ load weights over! 8697.88932800293 ms 
+
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 11.13it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 11.12it/s]
+/usr/local/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+[model] Diffusers execution device: cuda:0
+[model] VAE precision: video=torch.float32, audio=torch.float32
+[generate] Running MiniMax-H3 FL2VA
+  text:            A dog falls asleep
+  first frame:     True
+  last frame:      False
+  frames:          124
+  steps:           50
+  backend:         InfiniLM
+  0%|          | 0/49 [00:00<?, ?it/s]  2%|▏         | 1/49 [00:10<08:42, 10.88s/it]  4%|▍         | 2/49 [00:18<07:11,  9.17s/it]  6%|▌         | 3/49 [00:26<06:36,  8.62s/it]  8%|▊         | 4/49 [00:34<06:16,  8.37s/it] 10%|█         | 5/49 [00:42<06:01,  8.22s/it] 12%|█▏        | 6/49 [00:50<05:49,  8.14s/it] 14%|█▍        | 7/49 [00:58<05:39,  8.08s/it] 16%|█▋        | 8/49 [01:06<05:30,  8.05s/it] 18%|█▊        | 9/49 [01:14<05:21,  8.03s/it] 20%|██        | 10/49 [01:22<05:12,  8.01s/it] 22%|██▏       | 11/49 [01:30<05:03,  8.00s/it] 24%|██▍       | 12/49 [01:38<04:55,  7.99s/it] 27%|██▋       | 13/49 [01:46<04:47,  7.98s/it] 29%|██▊       | 14/49 [01:54<04:39,  7.98s/it] 31%|███       | 15/49 [02:02<04:31,  7.98s/it] 33%|███▎      | 16/49 [02:10<04:23,  7.98s/it] 35%|███▍      | 17/49 [02:18<04:15,  7.98s/it] 37%|███▋      | 18/49 [02:26<04:07,  7.97s/it] 39%|███▉      | 19/49 [02:34<03:59,  7.97s/it] 41%|████      | 20/49 [02:42<03:51,  7.97s/it] 43%|████▎     | 21/49 [02:50<03:43,  7.97s/it] 45%|████▍     | 22/49 [02:58<03:35,  7.97s/it] 47%|████▋     | 23/49 [03:06<03:27,  7.97s/it] 49%|████▉     | 24/49 [03:14<03:19,  7.97s/it] 51%|█████     | 25/49 [03:22<03:11,  7.97s/it] 53%|█████▎    | 26/49 [03:30<03:03,  7.97s/it] 55%|█████▌    | 27/49 [03:38<02:55,  7.97s/it] 57%|█████▋    | 28/49 [03:46<02:47,  7.98s/it] 59%|█████▉    | 29/49 [03:54<02:39,  7.97s/it] 61%|██████    | 30/49 [04:02<02:31,  7.97s/it] 63%|██████▎   | 31/49 [04:10<02:23,  7.97s/it] 65%|██████▌   | 32/49 [04:18<02:15,  7.97s/it] 67%|██████▋   | 33/49 [04:26<02:07,  7.97s/it] 69%|██████▉   | 34/49 [04:33<01:59,  7.97s/it] 71%|███████▏  | 35/49 [04:41<01:51,  7.97s/it] 73%|███████▎  | 36/49 [04:49<01:43,  7.97s/it] 76%|███████▌  | 37/49 [04:57<01:35,  7.97s/it] 78%|███████▊  | 38/49 [05:05<01:27,  7.97s/it] 80%|███████▉  | 39/49 [05:13<01:19,  7.97s/it] 82%|████████▏ | 40/49 [05:21<01:11,  7.97s/it] 84%|████████▎ | 41/49 [05:29<01:03,  7.97s/it] 86%|████████▌ | 42/49 [05:37<00:55,  7.97s/it] 88%|████████▊ | 43/49 [05:45<00:47,  7.97s/it] 90%|████████▉ | 44/49 [05:53<00:39,  7.97s/it] 92%|█████████▏| 45/49 [06:01<00:31,  7.97s/it] 94%|█████████▍| 46/49 [06:09<00:23,  7.97s/it] 96%|█████████▌| 47/49 [06:17<00:15,  7.97s/it] 98%|█████████▊| 48/49 [06:25<00:07,  7.97s/it]100%|██████████| 49/49 [06:33<00:00,  7.97s/it]100%|██████████| 49/49 [06:33<00:00,  8.03s/it]
+/workspace/h3-deps-20261101/venv/lib/python3.11/site-packages/diffusers/models/attention_dispatch.py:3535: UserWarning: sdpa adopt the new interface of flash-attn (Triggered internally at /home/pytorch/aten/src/ATen/native/transformers/hip/cutlassfa_adapter.h:145.)
+  out = torch.nn.functional.scaled_dot_product_attention(
+Encoding video chunks:   0%|          | 0/1 [00:00<?, ?it/s]Encoding video chunks: 100%|██████████| 1/1 [00:00<00:00,  1.13it/s]Encoding video chunks: 100%|██████████| 1/1 [00:00<00:00,  1.13it/s]
+
+[timing] MiniMax-H3 profile
+  model.pipeline_create                      0.080 s
+  model.condition_encoder_create_and_load    16.972 s
+  model.transformer_create_and_load         11.442 s
+  model.remaining_components_create_and_load     4.172 s
+  input.files_and_references                 0.013 s
+  input.arguments                            0.000 s
+  compute.condition_encoder                  6.492 s
+  input.video_vae_encode                     2.443 s
+  input.audio_vae_encode                     0.000 s (0 calls)
+  compute.h3_transformer                   393.458 s (49 calls, 8.030 s/call)
+  output.video_vae_decode                   18.378 s
+  output.audio_vae_decode                    1.796 s
+  generation.pipeline_total                425.916 s
+  output.media_encode                        1.459 s
+  total.end_to_end                         478.232 s
+  pipeline.other_preprocess_scheduler        3.350 s
+[done] Saved to: /public/home/aclsylqidf/Projects/minimax-h3-dev/outputs/20261103-ninetoothed/fl2va_50step.mp4
+[NineToothed acceptance] {"completed": true, "wrapper_seconds": 482.6712218215689, "calls": {"0": {"head72_causal0": 27, "head72_causal1": 0, "head96_causal0": 0, "head96_causal1": 0, "head128_causal0": 2548, "head128_causal1": 0}, "1": {"head72_causal0": 27, "head72_causal1": 0, "head96_causal0": 0, "head96_causal1": 0, "head128_causal0": 2548, "head128_causal1": 0}, "2": {"head72_causal0": 27, "head72_causal1": 0, "head96_causal0": 0, "head96_causal1": 0, "head128_causal0": 2548, "head128_causal1": 0}, "3": {"head72_causal0": 27, "head72_causal1": 0, "head96_causal0": 0, "head96_causal1": 0, "head128_causal0": 2548, "head128_causal1": 0}, "4": {"head72_causal0": 27, "head72_causal1": 0, "head96_causal0": 0, "head96_causal1": 0, "head128_causal0": 2548, "head128_causal1": 0}, "5": {"head72_causal0": 27, "head72_causal1": 0, "head96_causal0": 0, "head96_causal1": 0, "head128_causal0": 2548, "head128_causal1": 0}, "6": {"head72_causal0": 27, "head72_causal1": 0, "head96_causal0": 0, "head96_causal1": 0, "head128_causal0": 2548, "head128_causal1": 0}, "7": {"head72_causal0": 27, "head72_causal1": 0, "head96_causal0": 0, "head96_causal1": 0, "head128_causal0": 2548, "head128_causal1": 0}}, "device_memory_sampled_peak_MiB": [42877.5, 28221.5, 28221.5, 28221.5, 28221.5, 28221.5, 28221.5, 28029.5], "memory_note": "Whole-device used memory sampled every 0.5s, includes runtime and other processes; not an exact instantaneous peak.", "libraries": ["/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/native/lib/libh3_ninetoothed.so", "/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/native/lib/libinfinicore_cpp_api.so", "/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/native/lib/libinfiniop.so"]}

@@ -1,0 +1,29 @@
+{
+  "video": {
+    "finite": true,
+    "max_abs_error": 1.5359930992126465,
+    "relative_rmse": 0.02609252530487908,
+    "cosine": 0.9996612513719005
+  },
+  "audio": {
+    "finite": true,
+    "max_abs_error": 0.12123827636241913,
+    "relative_rmse": 0.04030901335773863,
+    "cosine": 0.9991913859142139
+  },
+  "calls_by_device": {
+    "0": 52,
+    "1": 52,
+    "2": 52,
+    "3": 52,
+    "4": 52,
+    "5": 52,
+    "6": 52,
+    "7": 52
+  },
+  "loaded_libraries": [
+    "/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/native/lib/libh3_ninetoothed.so",
+    "/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/native/lib/libinfinicore_cpp_api.so"
+  ],
+  "pass": true
+}

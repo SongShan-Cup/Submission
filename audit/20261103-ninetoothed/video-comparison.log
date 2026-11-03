@@ -1,0 +1,87 @@
+{
+  "against_native_baseline": {
+    "exact": false,
+    "left_metadata": {
+      "width": 768,
+      "height": 928,
+      "declared_frames": 124,
+      "average_fps": 24.0,
+      "duration_seconds": 5.166666666666667
+    },
+    "right_metadata": {
+      "width": 768,
+      "height": 928,
+      "declared_frames": 124,
+      "average_fps": 24.0,
+      "duration_seconds": 5.166666666666667
+    },
+    "metadata_size_match": true,
+    "decoded_length_match": true,
+    "left_frames": 124,
+    "right_frames": 124,
+    "shape_mismatches": 0,
+    "different_elements": 221503134,
+    "compared_elements": 265125888,
+    "max_absolute_difference": 252,
+    "mean_absolute_difference": 5.2644347352454695,
+    "ssim_match_percent": 94.02596478992089,
+    "ssim_min_percent": 87.75794491954763,
+    "ssim_max_percent": 98.52173729500885,
+    "ssim_method": "grayscale frames scaled to at most 512 pixels per side"
+  },
+  "against_pytorch_reference": {
+    "exact": false,
+    "left_metadata": {
+      "width": 768,
+      "height": 928,
+      "declared_frames": 124,
+      "average_fps": 24.0,
+      "duration_seconds": 5.166666666666667
+    },
+    "right_metadata": {
+      "width": 768,
+      "height": 928,
+      "declared_frames": 124,
+      "average_fps": 24.0,
+      "duration_seconds": 5.166666666666667
+    },
+    "metadata_size_match": true,
+    "decoded_length_match": true,
+    "left_frames": 124,
+    "right_frames": 124,
+    "shape_mismatches": 0,
+    "different_elements": 218034570,
+    "compared_elements": 265125888,
+    "max_absolute_difference": 215,
+    "mean_absolute_difference": 4.092098637308477,
+    "ssim_match_percent": 96.5835404684485,
+    "ssim_min_percent": 92.82039692919251,
+    "ssim_max_percent": 98.79002402281873,
+    "ssim_method": "grayscale frames scaled to at most 512 pixels per side"
+  },
+  "PyTorch reference_audio": {
+    "rate": 32000,
+    "channels": 2,
+    "samples": 165888,
+    "finite": true,
+    "peak": 0.3120052218437195,
+    "rms": 0.015452196642668458
+  },
+  "Native baseline_audio": {
+    "rate": 32000,
+    "channels": 2,
+    "samples": 165888,
+    "finite": true,
+    "peak": 0.3211921751499176,
+    "rms": 0.01563213530834662
+  },
+  "NineToothed_audio": {
+    "rate": 32000,
+    "channels": 2,
+    "samples": 165888,
+    "finite": true,
+    "peak": 0.3602083921432495,
+    "rms": 0.017323144834922567
+  },
+  "specification_pass": true
+}

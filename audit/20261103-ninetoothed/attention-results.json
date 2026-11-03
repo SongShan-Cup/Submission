@@ -1,0 +1,554 @@
+{
+  "library": "/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/native/lib/libh3_ninetoothed.so",
+  "cases": [
+    {
+      "name": "tail_and_strided_output",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        127,
+        127,
+        4,
+        4,
+        72
+      ],
+      "causal": false,
+      "device": 0,
+      "max_abs_error": 0.002406597137451172,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "tail_and_strided_output",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        127,
+        127,
+        4,
+        4,
+        72
+      ],
+      "causal": true,
+      "device": 0,
+      "max_abs_error": 0.007338523864746094,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "tail_and_strided_output",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        127,
+        127,
+        4,
+        4,
+        96
+      ],
+      "causal": false,
+      "device": 0,
+      "max_abs_error": 0.003278374671936035,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "tail_and_strided_output",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        127,
+        127,
+        4,
+        4,
+        96
+      ],
+      "causal": true,
+      "device": 0,
+      "max_abs_error": 0.007742404937744141,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "tail_and_strided_output",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        127,
+        127,
+        4,
+        4,
+        128
+      ],
+      "causal": false,
+      "device": 0,
+      "max_abs_error": 0.002240478992462158,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "tail_and_strided_output",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        127,
+        127,
+        4,
+        4,
+        128
+      ],
+      "causal": true,
+      "device": 0,
+      "max_abs_error": 0.007561922073364258,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "gqa_rectangular",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        17,
+        29,
+        8,
+        2,
+        128
+      ],
+      "causal": true,
+      "device": 0,
+      "max_abs_error": 0.004315495491027832,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "fully_masked_causal_rows",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        29,
+        17,
+        8,
+        2,
+        128
+      ],
+      "causal": true,
+      "device": 0,
+      "max_abs_error": 0.008336544036865234,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "noncontiguous_input_custom_scale",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        63,
+        97,
+        8,
+        2,
+        72
+      ],
+      "causal": false,
+      "device": 0,
+      "max_abs_error": 0.0046700239181518555,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "q_equals_k_equals_v",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        127,
+        127,
+        7,
+        7,
+        128
+      ],
+      "causal": false,
+      "device": 0,
+      "max_abs_error": 0.009846687316894531,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "q_equals_k_equals_v_vision",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        127,
+        127,
+        16,
+        16,
+        72
+      ],
+      "causal": false,
+      "device": 0,
+      "max_abs_error": 0.014040946960449219,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "tail_and_strided_output",
+      "dtype": "torch.float16",
+      "shape": [
+        2,
+        127,
+        127,
+        4,
+        4,
+        72
+      ],
+      "causal": false,
+      "device": 0,
+      "max_abs_error": 0.00026619434356689453,
+      "atol": 0.004,
+      "rtol": 0.01,
+      "pass": true
+    },
+    {
+      "name": "tail_and_strided_output",
+      "dtype": "torch.float16",
+      "shape": [
+        2,
+        127,
+        127,
+        4,
+        4,
+        72
+      ],
+      "causal": true,
+      "device": 0,
+      "max_abs_error": 0.0010128021240234375,
+      "atol": 0.004,
+      "rtol": 0.01,
+      "pass": true
+    },
+    {
+      "name": "tail_and_strided_output",
+      "dtype": "torch.float16",
+      "shape": [
+        2,
+        127,
+        127,
+        4,
+        4,
+        96
+      ],
+      "causal": false,
+      "device": 0,
+      "max_abs_error": 0.0004756450653076172,
+      "atol": 0.004,
+      "rtol": 0.01,
+      "pass": true
+    },
+    {
+      "name": "tail_and_strided_output",
+      "dtype": "torch.float16",
+      "shape": [
+        2,
+        127,
+        127,
+        4,
+        4,
+        96
+      ],
+      "causal": true,
+      "device": 0,
+      "max_abs_error": 0.0009946823120117188,
+      "atol": 0.004,
+      "rtol": 0.01,
+      "pass": true
+    },
+    {
+      "name": "tail_and_strided_output",
+      "dtype": "torch.float16",
+      "shape": [
+        2,
+        127,
+        127,
+        4,
+        4,
+        128
+      ],
+      "causal": false,
+      "device": 0,
+      "max_abs_error": 0.0003388524055480957,
+      "atol": 0.004,
+      "rtol": 0.01,
+      "pass": true
+    },
+    {
+      "name": "tail_and_strided_output",
+      "dtype": "torch.float16",
+      "shape": [
+        2,
+        127,
+        127,
+        4,
+        4,
+        128
+      ],
+      "causal": true,
+      "device": 0,
+      "max_abs_error": 0.00095367431640625,
+      "atol": 0.004,
+      "rtol": 0.01,
+      "pass": true
+    },
+    {
+      "name": "gqa_rectangular",
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        17,
+        29,
+        8,
+        2,
+        128
+      ],
+      "causal": true,
+      "device": 0,
+      "max_abs_error": 0.0005252361297607422,
+      "atol": 0.004,
+      "rtol": 0.01,
+      "pass": true
+    },
+    {
+      "name": "fully_masked_causal_rows",
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        29,
+        17,
+        8,
+        2,
+        128
+      ],
+      "causal": true,
+      "device": 0,
+      "max_abs_error": 0.0010399818420410156,
+      "atol": 0.004,
+      "rtol": 0.01,
+      "pass": true
+    },
+    {
+      "name": "noncontiguous_input_custom_scale",
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        63,
+        97,
+        8,
+        2,
+        72
+      ],
+      "causal": false,
+      "device": 0,
+      "max_abs_error": 0.0004919767379760742,
+      "atol": 0.004,
+      "rtol": 0.01,
+      "pass": true
+    },
+    {
+      "name": "q_equals_k_equals_v",
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        127,
+        127,
+        7,
+        7,
+        128
+      ],
+      "causal": false,
+      "device": 0,
+      "max_abs_error": 0.0019326210021972656,
+      "atol": 0.004,
+      "rtol": 0.01,
+      "pass": true
+    },
+    {
+      "name": "q_equals_k_equals_v_vision",
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        127,
+        127,
+        16,
+        16,
+        72
+      ],
+      "causal": false,
+      "device": 0,
+      "max_abs_error": 0.0017156600952148438,
+      "atol": 0.004,
+      "rtol": 0.01,
+      "pass": true
+    },
+    {
+      "name": "device_context",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        31,
+        43,
+        2,
+        2,
+        128
+      ],
+      "causal": false,
+      "device": 1,
+      "max_abs_error": 0.0028229951858520508,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "device_context",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        31,
+        43,
+        2,
+        2,
+        128
+      ],
+      "causal": false,
+      "device": 2,
+      "max_abs_error": 0.0028229951858520508,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "device_context",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        31,
+        43,
+        2,
+        2,
+        128
+      ],
+      "causal": false,
+      "device": 3,
+      "max_abs_error": 0.0028229951858520508,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "device_context",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        31,
+        43,
+        2,
+        2,
+        128
+      ],
+      "causal": false,
+      "device": 4,
+      "max_abs_error": 0.0028229951858520508,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "device_context",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        31,
+        43,
+        2,
+        2,
+        128
+      ],
+      "causal": false,
+      "device": 5,
+      "max_abs_error": 0.0028229951858520508,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "device_context",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        31,
+        43,
+        2,
+        2,
+        128
+      ],
+      "causal": false,
+      "device": 6,
+      "max_abs_error": 0.0028229951858520508,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    },
+    {
+      "name": "device_context",
+      "dtype": "torch.bfloat16",
+      "shape": [
+        1,
+        31,
+        43,
+        2,
+        2,
+        128
+      ],
+      "causal": false,
+      "device": 7,
+      "max_abs_error": 0.0028229951858520508,
+      "atol": 0.025,
+      "rtol": 0.025,
+      "pass": true
+    }
+  ],
+  "unsupported_head": {
+    "pass": true,
+    "message": "NineToothed Hygon MHA supports head_dim 72/96/128 and BF16/FP16 only; no vendor fallback"
+  },
+  "unsupported_alibi": {
+    "pass": true,
+    "message": "NineToothed Hygon MHA does not support ALiBi; no vendor fallback"
+  },
+  "long_sequence": {
+    "sequence": 32768,
+    "heads": 7,
+    "pass": true,
+    "sampled_max_abs_error": 0.0001020822674036026,
+    "torch_peak_MiB": 256.00048828125,
+    "device_free_delta_MiB": 224.0,
+    "seconds": [
+      0.1379736429080367,
+      0.13971853395923972,
+      0.14016083488240838
+    ]
+  },
+  "loaded_libraries": [
+    "/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/native/lib/libh3_ninetoothed.so",
+    "/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/native/lib/libinfinicore_cpp_api.so",
+    "/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/native/lib/libinfiniop.so"
+  ],
+  "pass": true
+}

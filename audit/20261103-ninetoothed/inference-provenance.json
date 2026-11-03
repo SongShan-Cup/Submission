@@ -1,0 +1,86 @@
+{
+  "completed": true,
+  "wrapper_seconds": 482.6712218215689,
+  "calls": {
+    "0": {
+      "head72_causal0": 27,
+      "head72_causal1": 0,
+      "head96_causal0": 0,
+      "head96_causal1": 0,
+      "head128_causal0": 2548,
+      "head128_causal1": 0
+    },
+    "1": {
+      "head72_causal0": 27,
+      "head72_causal1": 0,
+      "head96_causal0": 0,
+      "head96_causal1": 0,
+      "head128_causal0": 2548,
+      "head128_causal1": 0
+    },
+    "2": {
+      "head72_causal0": 27,
+      "head72_causal1": 0,
+      "head96_causal0": 0,
+      "head96_causal1": 0,
+      "head128_causal0": 2548,
+      "head128_causal1": 0
+    },
+    "3": {
+      "head72_causal0": 27,
+      "head72_causal1": 0,
+      "head96_causal0": 0,
+      "head96_causal1": 0,
+      "head128_causal0": 2548,
+      "head128_causal1": 0
+    },
+    "4": {
+      "head72_causal0": 27,
+      "head72_causal1": 0,
+      "head96_causal0": 0,
+      "head96_causal1": 0,
+      "head128_causal0": 2548,
+      "head128_causal1": 0
+    },
+    "5": {
+      "head72_causal0": 27,
+      "head72_causal1": 0,
+      "head96_causal0": 0,
+      "head96_causal1": 0,
+      "head128_causal0": 2548,
+      "head128_causal1": 0
+    },
+    "6": {
+      "head72_causal0": 27,
+      "head72_causal1": 0,
+      "head96_causal0": 0,
+      "head96_causal1": 0,
+      "head128_causal0": 2548,
+      "head128_causal1": 0
+    },
+    "7": {
+      "head72_causal0": 27,
+      "head72_causal1": 0,
+      "head96_causal0": 0,
+      "head96_causal1": 0,
+      "head128_causal0": 2548,
+      "head128_causal1": 0
+    }
+  },
+  "device_memory_sampled_peak_MiB": [
+    42877.5,
+    28221.5,
+    28221.5,
+    28221.5,
+    28221.5,
+    28221.5,
+    28221.5,
+    28029.5
+  ],
+  "memory_note": "Whole-device used memory sampled every 0.5s, includes runtime and other processes; not an exact instantaneous peak.",
+  "libraries": [
+    "/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/native/lib/libh3_ninetoothed.so",
+    "/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/native/lib/libinfinicore_cpp_api.so",
+    "/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/native/lib/libinfiniop.so"
+  ]
+}

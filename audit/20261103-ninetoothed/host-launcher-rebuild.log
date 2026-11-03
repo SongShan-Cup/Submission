@@ -1,0 +1,276 @@
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_128_0.cpp: In function ‘int launch_h3_nt_bf16_128_0(void*, H3NTTensor, H3NTTensor, H3NTTensor, H3NTTensor, float)’:
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_128_0.cpp:9:53: warning: ‘hipError_t hipCtxGetCurrent(ihipCtx_t**)’ is deprecated: This API is marked as deprecated and may not be supported in future releases. For more details please refer https://github.com/ROCm-Developer-Tools/HIP/blob/master/docs/markdown/hip_deprecated_api_list.md [-Wdeprecated-declarations]
+    9 |     hipCtx_t context; auto status = hipCtxGetCurrent(&context);
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_128_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5385:12: note: declared here
+ 5385 | hipError_t hipCtxGetCurrent(hipCtx_t* ctx);
+      |            ^~~~~~~~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_128_0.cpp:20:52: warning: ignoring returned value of type ‘hipError_t’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   20 |         if (status != hipSuccess) { hipModuleUnload(item.module); return status; }
+      |                                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_128_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5990:12: note: in call to ‘hipError_t hipModuleUnload(hipModule_t)’, declared here
+ 5990 | hipError_t hipModuleUnload(hipModule_t module);
+      |            ^~~~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime_api.h:38,
+                 from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_128_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_defines.h:477:3: note: ‘hipError_t’ declared here
+  477 | } hipError_t;
+      |   ^~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_128_1.cpp: In function ‘int launch_h3_nt_bf16_128_1(void*, H3NTTensor, H3NTTensor, H3NTTensor, H3NTTensor, float)’:
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_128_1.cpp:9:53: warning: ‘hipError_t hipCtxGetCurrent(ihipCtx_t**)’ is deprecated: This API is marked as deprecated and may not be supported in future releases. For more details please refer https://github.com/ROCm-Developer-Tools/HIP/blob/master/docs/markdown/hip_deprecated_api_list.md [-Wdeprecated-declarations]
+    9 |     hipCtx_t context; auto status = hipCtxGetCurrent(&context);
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_128_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5385:12: note: declared here
+ 5385 | hipError_t hipCtxGetCurrent(hipCtx_t* ctx);
+      |            ^~~~~~~~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_128_1.cpp:20:52: warning: ignoring returned value of type ‘hipError_t’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   20 |         if (status != hipSuccess) { hipModuleUnload(item.module); return status; }
+      |                                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_128_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5990:12: note: in call to ‘hipError_t hipModuleUnload(hipModule_t)’, declared here
+ 5990 | hipError_t hipModuleUnload(hipModule_t module);
+      |            ^~~~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime_api.h:38,
+                 from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_128_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_defines.h:477:3: note: ‘hipError_t’ declared here
+  477 | } hipError_t;
+      |   ^~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_72_0.cpp: In function ‘int launch_h3_nt_bf16_72_0(void*, H3NTTensor, H3NTTensor, H3NTTensor, H3NTTensor, float)’:
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_72_0.cpp:9:53: warning: ‘hipError_t hipCtxGetCurrent(ihipCtx_t**)’ is deprecated: This API is marked as deprecated and may not be supported in future releases. For more details please refer https://github.com/ROCm-Developer-Tools/HIP/blob/master/docs/markdown/hip_deprecated_api_list.md [-Wdeprecated-declarations]
+    9 |     hipCtx_t context; auto status = hipCtxGetCurrent(&context);
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_72_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5385:12: note: declared here
+ 5385 | hipError_t hipCtxGetCurrent(hipCtx_t* ctx);
+      |            ^~~~~~~~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_72_0.cpp:20:52: warning: ignoring returned value of type ‘hipError_t’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   20 |         if (status != hipSuccess) { hipModuleUnload(item.module); return status; }
+      |                                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_72_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5990:12: note: in call to ‘hipError_t hipModuleUnload(hipModule_t)’, declared here
+ 5990 | hipError_t hipModuleUnload(hipModule_t module);
+      |            ^~~~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime_api.h:38,
+                 from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_72_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_defines.h:477:3: note: ‘hipError_t’ declared here
+  477 | } hipError_t;
+      |   ^~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_72_1.cpp: In function ‘int launch_h3_nt_bf16_72_1(void*, H3NTTensor, H3NTTensor, H3NTTensor, H3NTTensor, float)’:
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_72_1.cpp:9:53: warning: ‘hipError_t hipCtxGetCurrent(ihipCtx_t**)’ is deprecated: This API is marked as deprecated and may not be supported in future releases. For more details please refer https://github.com/ROCm-Developer-Tools/HIP/blob/master/docs/markdown/hip_deprecated_api_list.md [-Wdeprecated-declarations]
+    9 |     hipCtx_t context; auto status = hipCtxGetCurrent(&context);
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_72_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5385:12: note: declared here
+ 5385 | hipError_t hipCtxGetCurrent(hipCtx_t* ctx);
+      |            ^~~~~~~~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_72_1.cpp:20:52: warning: ignoring returned value of type ‘hipError_t’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   20 |         if (status != hipSuccess) { hipModuleUnload(item.module); return status; }
+      |                                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_72_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5990:12: note: in call to ‘hipError_t hipModuleUnload(hipModule_t)’, declared here
+ 5990 | hipError_t hipModuleUnload(hipModule_t module);
+      |            ^~~~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime_api.h:38,
+                 from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_72_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_defines.h:477:3: note: ‘hipError_t’ declared here
+  477 | } hipError_t;
+      |   ^~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_96_0.cpp: In function ‘int launch_h3_nt_bf16_96_0(void*, H3NTTensor, H3NTTensor, H3NTTensor, H3NTTensor, float)’:
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_96_0.cpp:9:53: warning: ‘hipError_t hipCtxGetCurrent(ihipCtx_t**)’ is deprecated: This API is marked as deprecated and may not be supported in future releases. For more details please refer https://github.com/ROCm-Developer-Tools/HIP/blob/master/docs/markdown/hip_deprecated_api_list.md [-Wdeprecated-declarations]
+    9 |     hipCtx_t context; auto status = hipCtxGetCurrent(&context);
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_96_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5385:12: note: declared here
+ 5385 | hipError_t hipCtxGetCurrent(hipCtx_t* ctx);
+      |            ^~~~~~~~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_96_0.cpp:20:52: warning: ignoring returned value of type ‘hipError_t’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   20 |         if (status != hipSuccess) { hipModuleUnload(item.module); return status; }
+      |                                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_96_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5990:12: note: in call to ‘hipError_t hipModuleUnload(hipModule_t)’, declared here
+ 5990 | hipError_t hipModuleUnload(hipModule_t module);
+      |            ^~~~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime_api.h:38,
+                 from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_96_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_defines.h:477:3: note: ‘hipError_t’ declared here
+  477 | } hipError_t;
+      |   ^~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_96_1.cpp: In function ‘int launch_h3_nt_bf16_96_1(void*, H3NTTensor, H3NTTensor, H3NTTensor, H3NTTensor, float)’:
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_96_1.cpp:9:53: warning: ‘hipError_t hipCtxGetCurrent(ihipCtx_t**)’ is deprecated: This API is marked as deprecated and may not be supported in future releases. For more details please refer https://github.com/ROCm-Developer-Tools/HIP/blob/master/docs/markdown/hip_deprecated_api_list.md [-Wdeprecated-declarations]
+    9 |     hipCtx_t context; auto status = hipCtxGetCurrent(&context);
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_96_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5385:12: note: declared here
+ 5385 | hipError_t hipCtxGetCurrent(hipCtx_t* ctx);
+      |            ^~~~~~~~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_bf16_96_1.cpp:20:52: warning: ignoring returned value of type ‘hipError_t’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   20 |         if (status != hipSuccess) { hipModuleUnload(item.module); return status; }
+      |                                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_96_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5990:12: note: in call to ‘hipError_t hipModuleUnload(hipModule_t)’, declared here
+ 5990 | hipError_t hipModuleUnload(hipModule_t module);
+      |            ^~~~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime_api.h:38,
+                 from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_bf16_96_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_defines.h:477:3: note: ‘hipError_t’ declared here
+  477 | } hipError_t;
+      |   ^~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_128_0.cpp: In function ‘int launch_h3_nt_fp16_128_0(void*, H3NTTensor, H3NTTensor, H3NTTensor, H3NTTensor, float)’:
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_128_0.cpp:9:53: warning: ‘hipError_t hipCtxGetCurrent(ihipCtx_t**)’ is deprecated: This API is marked as deprecated and may not be supported in future releases. For more details please refer https://github.com/ROCm-Developer-Tools/HIP/blob/master/docs/markdown/hip_deprecated_api_list.md [-Wdeprecated-declarations]
+    9 |     hipCtx_t context; auto status = hipCtxGetCurrent(&context);
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_128_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5385:12: note: declared here
+ 5385 | hipError_t hipCtxGetCurrent(hipCtx_t* ctx);
+      |            ^~~~~~~~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_128_0.cpp:20:52: warning: ignoring returned value of type ‘hipError_t’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   20 |         if (status != hipSuccess) { hipModuleUnload(item.module); return status; }
+      |                                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_128_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5990:12: note: in call to ‘hipError_t hipModuleUnload(hipModule_t)’, declared here
+ 5990 | hipError_t hipModuleUnload(hipModule_t module);
+      |            ^~~~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime_api.h:38,
+                 from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_128_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_defines.h:477:3: note: ‘hipError_t’ declared here
+  477 | } hipError_t;
+      |   ^~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_128_1.cpp: In function ‘int launch_h3_nt_fp16_128_1(void*, H3NTTensor, H3NTTensor, H3NTTensor, H3NTTensor, float)’:
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_128_1.cpp:9:53: warning: ‘hipError_t hipCtxGetCurrent(ihipCtx_t**)’ is deprecated: This API is marked as deprecated and may not be supported in future releases. For more details please refer https://github.com/ROCm-Developer-Tools/HIP/blob/master/docs/markdown/hip_deprecated_api_list.md [-Wdeprecated-declarations]
+    9 |     hipCtx_t context; auto status = hipCtxGetCurrent(&context);
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_128_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5385:12: note: declared here
+ 5385 | hipError_t hipCtxGetCurrent(hipCtx_t* ctx);
+      |            ^~~~~~~~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_128_1.cpp:20:52: warning: ignoring returned value of type ‘hipError_t’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   20 |         if (status != hipSuccess) { hipModuleUnload(item.module); return status; }
+      |                                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_128_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5990:12: note: in call to ‘hipError_t hipModuleUnload(hipModule_t)’, declared here
+ 5990 | hipError_t hipModuleUnload(hipModule_t module);
+      |            ^~~~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime_api.h:38,
+                 from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_128_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_defines.h:477:3: note: ‘hipError_t’ declared here
+  477 | } hipError_t;
+      |   ^~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_72_0.cpp: In function ‘int launch_h3_nt_fp16_72_0(void*, H3NTTensor, H3NTTensor, H3NTTensor, H3NTTensor, float)’:
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_72_0.cpp:9:53: warning: ‘hipError_t hipCtxGetCurrent(ihipCtx_t**)’ is deprecated: This API is marked as deprecated and may not be supported in future releases. For more details please refer https://github.com/ROCm-Developer-Tools/HIP/blob/master/docs/markdown/hip_deprecated_api_list.md [-Wdeprecated-declarations]
+    9 |     hipCtx_t context; auto status = hipCtxGetCurrent(&context);
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_72_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5385:12: note: declared here
+ 5385 | hipError_t hipCtxGetCurrent(hipCtx_t* ctx);
+      |            ^~~~~~~~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_72_0.cpp:20:52: warning: ignoring returned value of type ‘hipError_t’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   20 |         if (status != hipSuccess) { hipModuleUnload(item.module); return status; }
+      |                                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_72_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5990:12: note: in call to ‘hipError_t hipModuleUnload(hipModule_t)’, declared here
+ 5990 | hipError_t hipModuleUnload(hipModule_t module);
+      |            ^~~~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime_api.h:38,
+                 from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_72_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_defines.h:477:3: note: ‘hipError_t’ declared here
+  477 | } hipError_t;
+      |   ^~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_72_1.cpp: In function ‘int launch_h3_nt_fp16_72_1(void*, H3NTTensor, H3NTTensor, H3NTTensor, H3NTTensor, float)’:
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_72_1.cpp:9:53: warning: ‘hipError_t hipCtxGetCurrent(ihipCtx_t**)’ is deprecated: This API is marked as deprecated and may not be supported in future releases. For more details please refer https://github.com/ROCm-Developer-Tools/HIP/blob/master/docs/markdown/hip_deprecated_api_list.md [-Wdeprecated-declarations]
+    9 |     hipCtx_t context; auto status = hipCtxGetCurrent(&context);
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_72_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5385:12: note: declared here
+ 5385 | hipError_t hipCtxGetCurrent(hipCtx_t* ctx);
+      |            ^~~~~~~~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_72_1.cpp:20:52: warning: ignoring returned value of type ‘hipError_t’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   20 |         if (status != hipSuccess) { hipModuleUnload(item.module); return status; }
+      |                                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_72_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5990:12: note: in call to ‘hipError_t hipModuleUnload(hipModule_t)’, declared here
+ 5990 | hipError_t hipModuleUnload(hipModule_t module);
+      |            ^~~~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime_api.h:38,
+                 from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_72_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_defines.h:477:3: note: ‘hipError_t’ declared here
+  477 | } hipError_t;
+      |   ^~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_96_0.cpp: In function ‘int launch_h3_nt_fp16_96_0(void*, H3NTTensor, H3NTTensor, H3NTTensor, H3NTTensor, float)’:
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_96_0.cpp:9:53: warning: ‘hipError_t hipCtxGetCurrent(ihipCtx_t**)’ is deprecated: This API is marked as deprecated and may not be supported in future releases. For more details please refer https://github.com/ROCm-Developer-Tools/HIP/blob/master/docs/markdown/hip_deprecated_api_list.md [-Wdeprecated-declarations]
+    9 |     hipCtx_t context; auto status = hipCtxGetCurrent(&context);
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_96_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5385:12: note: declared here
+ 5385 | hipError_t hipCtxGetCurrent(hipCtx_t* ctx);
+      |            ^~~~~~~~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_96_0.cpp:20:52: warning: ignoring returned value of type ‘hipError_t’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   20 |         if (status != hipSuccess) { hipModuleUnload(item.module); return status; }
+      |                                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_96_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5990:12: note: in call to ‘hipError_t hipModuleUnload(hipModule_t)’, declared here
+ 5990 | hipError_t hipModuleUnload(hipModule_t module);
+      |            ^~~~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime_api.h:38,
+                 from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_96_0.cpp:2:
+/opt/dtk/include/hip/hip_runtime_defines.h:477:3: note: ‘hipError_t’ declared here
+  477 | } hipError_t;
+      |   ^~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_96_1.cpp: In function ‘int launch_h3_nt_fp16_96_1(void*, H3NTTensor, H3NTTensor, H3NTTensor, H3NTTensor, float)’:
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_96_1.cpp:9:53: warning: ‘hipError_t hipCtxGetCurrent(ihipCtx_t**)’ is deprecated: This API is marked as deprecated and may not be supported in future releases. For more details please refer https://github.com/ROCm-Developer-Tools/HIP/blob/master/docs/markdown/hip_deprecated_api_list.md [-Wdeprecated-declarations]
+    9 |     hipCtx_t context; auto status = hipCtxGetCurrent(&context);
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_96_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5385:12: note: declared here
+ 5385 | hipError_t hipCtxGetCurrent(hipCtx_t* ctx);
+      |            ^~~~~~~~~~~~~~~~
+InfiniCore/build/h3-ninetoothed/h3_nt_fp16_96_1.cpp:20:52: warning: ignoring returned value of type ‘hipError_t’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   20 |         if (status != hipSuccess) { hipModuleUnload(item.module); return status; }
+      |                                     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_96_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_api.h:5990:12: note: in call to ‘hipError_t hipModuleUnload(hipModule_t)’, declared here
+ 5990 | hipError_t hipModuleUnload(hipModule_t module);
+      |            ^~~~~~~~~~~~~~~
+In file included from /opt/dtk/include/hip/hip_runtime_api.h:38,
+                 from /opt/dtk/include/hip/hip_runtime.h:113,
+                 from InfiniCore/build/h3-ninetoothed/h3_nt_fp16_96_1.cpp:2:
+/opt/dtk/include/hip/hip_runtime_defines.h:477:3: note: ‘hipError_t’ declared here
+  477 | } hipError_t;
+      |   ^~~~~~~~~~

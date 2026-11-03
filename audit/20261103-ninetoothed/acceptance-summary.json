@@ -1,0 +1,16 @@
+{
+  "checkpoint": "NineToothed MHA integrated; one acceptance round completed; stop here",
+  "operator_pass": true,
+  "same_input_integration_pass": true,
+  "video_specification_pass": true,
+  "inference_completed": true,
+  "ninetoothed_launches": 20600,
+  "ssim_vs_pytorch_percent": 96.5835404684485,
+  "ssim_vs_native_percent": 94.02596478992089,
+  "end_to_end_seconds": 478.232,
+  "native_baseline_seconds": 258.848,
+  "elapsed_ratio_to_native": 1.847539868957844,
+  "performance_regression": true,
+  "official_competition_acceptance": "not evaluated",
+  "device_sampled_peak_max_GiB": 41.87255859375
+}

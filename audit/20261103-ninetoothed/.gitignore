@@ -1,0 +1,4 @@
+debug/
+*.pt
+source.patch
+revision.txt

@@ -1,0 +1,17 @@
+compiler stage: make_llir
+compiler stage: make_amdgcn
+addSource: error: expected type
+  %412 = getelementptr inbounds nuw i8, ptr addrspace(3) @global_smem, i64 %411
+                                ^
+Fatal Python error: Segmentation fault
+
+Current thread 0x00007fc8ce095740 (most recent call first):
+  File "/workspace/h3-deps-20261101/venv/lib/python3.11/site-packages/triton/backends/amd/compiler.py", line 429 in make_amdgcn
+  File "/public/home/aclsylqidf/Projects/minimax-h3-dev/InfiniCore/src/infinicore/ops/multi_head_attention/ninetoothed/build_hygon.py", line 31 in wrapped
+  File "/workspace/h3-deps-20261101/venv/lib/python3.11/site-packages/triton/backends/amd/compiler.py", line 458 in <lambda>
+  File "/workspace/h3-deps-20261101/venv/lib/python3.11/site-packages/triton/compiler/compiler.py", line 320 in compile
+  File "/public/home/aclsylqidf/Projects/minimax-h3-dev/InfiniCore/src/infinicore/ops/multi_head_attention/ninetoothed/build_hygon.py", line 100 in build_variant
+  File "/public/home/aclsylqidf/Projects/minimax-h3-dev/InfiniCore/src/infinicore/ops/multi_head_attention/ninetoothed/build_hygon.py", line 153 in main
+  File "/public/home/aclsylqidf/Projects/minimax-h3-dev/InfiniCore/src/infinicore/ops/multi_head_attention/ninetoothed/build_hygon.py", line 175 in <module>
+
+Extension modules: numpy.core._multiarray_umath, numpy.core._multiarray_tests, numpy.linalg._umath_linalg, numpy.fft._pocketfft_internal, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, hip_utils (total: 25)

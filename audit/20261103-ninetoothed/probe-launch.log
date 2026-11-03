@@ -1,0 +1,6 @@
+launch 0
+/public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-ninetoothed/probe_launch.py:19: UserWarning: 1Torch was not compiled with memory efficient attention. (Triggered internally at /home/pytorch/aten/src/ATen/native/transformers/hip/sdp_utils.cpp:790.)
+  ref=torch.nn.functional.scaled_dot_product_attention(q.float(),k.float(),v.float(),is_causal=bool(causal))
+maxerr 0.0024260878562927246 finite True
+launch 0
+maxerr 0.007488727569580078 finite True

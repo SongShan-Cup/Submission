@@ -1,0 +1,53 @@
+ D "\350\246\201\346\261\202.txt"
+?? audit/20261102-fix/before-sync/layer-comparison.json
+?? audit/20261102-fix/build-lm-trace.log
+?? audit/20261102-fix/build-lm.log
+?? audit/20261102-fix/build.log
+?? audit/20261102-fix/condition-comparison-before-text-input-fix.log
+?? audit/20261102-fix/condition-comparison-launch.log
+?? audit/20261102-fix/condition-comparison.exit
+?? audit/20261102-fix/condition-comparison.log
+?? audit/20261102-fix/final-native-validation.log
+?? audit/20261102-fix/finish-validation.log
+?? audit/20261102-fix/first-step-comparison.log
+?? audit/20261102-fix/fl2va-50step-before-adaln-fix.log
+?? audit/20261102-fix/fl2va-50step-before-expanded-scalar.log
+?? audit/20261102-fix/fl2va-50step-before-head96-fix.log
+?? audit/20261102-fix/fl2va-50step-before-sync.log
+?? audit/20261102-fix/fl2va-50step-before-vision72-fix.log
+?? audit/20261102-fix/fl2va-50step-rank-diagnostic.log
+?? audit/20261102-fix/fl2va-50step-second.log
+?? audit/20261102-fix/layer-comparison.json
+?? audit/20261102-fix/rebuild-core-vision72.log
+?? audit/20261102-fix/rebuild-core.log
+?? audit/20261102-fix/rebuild-head96.log
+?? audit/20261102-fix/rebuild-lm.log
+?? audit/20261102-fix/sync-validation.log
+?? audit/20261102-fix/trace-native-launch.log
+?? audit/20261102-fix/trace-native.exit
+?? audit/20261102-fix/trace-native.log
+?? audit/20261102-fix/trace-reference-launch.log
+?? audit/20261102-fix/trace-reference.exit
+?? audit/20261102-fix/trace-reference.log
+?? audit/20261103-ninetoothed/
+?? outputs/
+?? requirements.txt
+commit afe1e882c62afcd7d3f5f61b4975c0da0c5e1b07
+Author:     Codex <codex@openai.com>
+AuthorDate: Tue Nov 3 20:57:49 2026 +0800
+Commit:     Codex <codex@openai.com>
+CommitDate: Tue Nov 3 20:57:49 2026 +0800
+
+    fix: restore Hygon MiniMax-H3 inference quality and synchronization
+    
+    Use memory-efficient vendor FlashAttention for Hygon MHA and handle the
+    installed wheel ABI, head padding, aliased inputs and strided outputs.
+    Synchronize dense predictions before publishing them and synchronize Torch
+    preprocessing before native workers consume inputs. Fix AdaLN scalar shape
+    handling, preserve VAE precision and isolate reference-path library imports.
+    
+    Add build/run scripts, numerical checks and audit reports, including the
+    remaining NineToothed implementation and submission requirements.
+    
+    Validation: Hygon builds; 32768-token attention checks; 768x928, 124-frame,
+    50-step FL2VA generation; 97.034% average SSIM against the local reference.

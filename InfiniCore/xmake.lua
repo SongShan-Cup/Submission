@@ -258,6 +258,14 @@ if has_config("ninetoothed") then
     add_defines("ENABLE_NINETOOTHED")
 end
 
+-- Build the H3 Hygon MHA path from NineToothed-generated HIP kernels.
+-- Separate from the generic CUDA-oriented --ninetoothed operator bundle.
+option("hygon-ninetoothed-mha")
+    set_default(false)
+    set_showmenu(true)
+    set_description("Use NineToothed AOT MHA on Hygon; unsupported inputs fail explicitly")
+option_end()
+
 -- Flash-Attn
 option("flash-attn")
     set_default(nil)
@@ -1038,6 +1046,17 @@ target("infinicore_cpp_api")
         end)
     end
 
+    if has_config("hygon-ninetoothed-mha") then
+        if not has_config("hygon-dcu") or not has_config("aten") then
+            raise("hygon-ninetoothed-mha requires hygon-dcu and aten")
+        end
+        add_defines("ENABLE_HYGON_NINETOOTHED_MHA")
+        add_includedirs("build/h3-ninetoothed")
+        add_linkdirs("build/h3-ninetoothed")
+        add_links("h3_ninetoothed")
+        add_rpathdirs("$ORIGIN")
+    end
+
     -- Add InfiniCore C++ source files (needed for RoPE and other nn modules)
     add_files("src/infinicore/*.cc")
     add_files("src/infinicore/adaptor/*.cc")
@@ -1054,7 +1073,7 @@ target("infinicore_cpp_api")
         -- Hygon links against a prebuilt flash-attn extension with a different ABI.
         -- Keep the platform-specific implementation under each op's hygon/ folder.
         add_files("src/infinicore/adaptor/flash_attn/hygon/*.cc")
-    else
+    elseif not has_config("hygon-ninetoothed-mha") then
         remove_files("src/infinicore/ops/*/hygon/*.cc")
     end
     if has_config("infiniops") and not has_config("nv-gpu")
