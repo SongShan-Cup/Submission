@@ -186,9 +186,8 @@ def _should_preload_device(device_type: str) -> bool:
         if os.getenv(env_var):
             return True
     if device_type == "HYGON":
-        dtk_root = os.getenv("DTK_ROOT") or "/opt/dtk"
-        if os.path.isdir(dtk_root):
-            return True
+        dtk_root = os.getenv("DTK_ROOT")
+        return bool(dtk_root and os.path.isdir(dtk_root))
     if device_type == "CAMBRICON":
         return importlib.util.find_spec("torch_mlu") is not None
     if device_type == "ILUVATAR":

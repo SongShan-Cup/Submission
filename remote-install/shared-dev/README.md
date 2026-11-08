@@ -4,13 +4,14 @@
 
 ## 日常使用
 
-在 SSH 登录节点修改并保存 `/public/home/aclsylqidf/Projects/minimax-h3-dev` 中的源码。
+项目路径、依赖路径、模型路径、输入图片、DTK 和 Hygon HAL 路径统一配置在
+`remote-install/h3-paths.env`。迁移服务器或更换目录时先编辑该文件。
 进入 worker-0 的新交互式 Bash 时，`/root/.bashrc` 自动加载本目录的 `activate-h3-dev.sh`。
 已打开的 Bash 终端或者非交互式脚本，请先执行：
 
 ```bash
-source /public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/shared-dev/activate-h3-dev.sh
-cd /public/home/aclsylqidf/Projects/minimax-h3-dev
+source remote-install/shared-dev/activate-h3-dev.sh
+cd "$H3_PROJECT_ROOT"
 ```
 
 `infinicore` 和 `infinilm` 的现有 editable 安装已指向共享项目中的对应 Python 包；无需每次手动设置 PYTHONPATH。
@@ -22,7 +23,15 @@ Python 源码修改后重新启动程序。已经运行的进程不会自动替�
 本次继续复用已有原生库，没有重新编译。C++、HIP、算子以及绑定接口修改后，应在容器内重新配置、编译并安装相应库。
 源码目录中的复制构建缓存可能包含旧绝对路径，重新构建时需检查构建配置与最终加载的 .so 路径。
 
-依赖环境、原生库和编译工具仍位于 `/workspace/h3-deps-20261101`。共享源码长期保存不等于容器环境已持久化。
+依赖环境、原生库和编译工具位置由 `H3_DEPS_ROOT` 指定。共享源码长期保存不等于容器环境已持久化。
+若整个依赖目录或项目目录被移动，先更新 `h3-paths.env`，再执行：
+
+```bash
+"$H3_DEPS_ROOT/venv/bin/python" remote-install/shared-dev/repair-relocated-env.py
+```
+
+该脚本会修复 venv 入口脚本、editable Python 包指向和自动激活配置，并验证
+`infinicore` / `infinilm` 实际从配置的项目目录导入。
 容器重建时，需要先恢复依赖环境，再配置自动激活；不能只依靠源码目录恢复整个环境。
 共享目录的配置脚本及备份可用于重新配置。`bind-shared-sources.py` 仅迁移当前版本的已有 editable 安装，不负责首次安装依赖。
 重装这两个 Python 包后，应再次核对实际导入路径。

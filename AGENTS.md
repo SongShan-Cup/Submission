@@ -24,22 +24,21 @@ kubectl exec -it vcjob-2116206198177124354-aclsylqidf-33085-worker-0 -n aclsylqi
 
 ## 模型参数位置
 
-```text
-/public/home/aclsylqidf/shared/MiniMax-H3
-```
+模型参数位置由 `remote-install/h3-paths.env` 的 `H3_MODEL_ROOT` 配置。
+迁移服务器或更换目录时，先更新该配置文件，再运行或构建。
 
 ## 远程工作目录与 Git 约定（2026-11-02 用户更新）
 
-- 后续统一在服务器 `/public/home/aclsylqidf/Projects/minimax-h3-dev` 下开展项目工作；代码修改、检查报告、运行日志、测试结果及生成视频均保存到此目录的相应子目录，避免继续散落在 `/workspace` 或用户目录的其他位置。
+- 后续统一在 `remote-install/h3-paths.env` 的 `H3_PROJECT_ROOT` 指向的项目目录下开展项目工作；代码修改、检查报告、运行日志、测试结果及生成视频均保存到此目录的相应子目录，避免继续散落在 `/workspace` 或用户目录的其他位置。
 - 该目录由用户使用 Git 管理。修改前先检查仓库状态，并创建新的工作分支；保留用户已有修改，不覆盖或重置用户工作。
 - 本地可维护长期说明及必要副本，正式结果应直接写入上述远程项目目录。
 - 模型权重仍使用上文指定的共享目录；已安装的依赖环境可继续复用，但必须核验实际加载的代码及运行库与当前工作目录一致。
 
 ## 共享源码开发环境（2026-11-02 已配置）
 
-- worker-0 中现有 `InfiniCore`、`InfiniLM` 的 editable 安装已改为加载 `/public/home/aclsylqidf/Projects/minimax-h3-dev` 下的对应源码；新开的容器交互式 Bash 会自动激活 H3 环境。
-- 已打开的容器终端及非交互式脚本应先执行 `source /public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/shared-dev/activate-h3-dev.sh`，再从共享项目目录运行脚本。
-- Python 源码保存后重启程序生效；C++、HIP、算子修改后仍需在容器内重新配置、编译并安装，核对最终加载的库。依赖环境继续复用 `/workspace/h3-deps-20261101`，容器重建后需要恢复环境和自动激活配置。
+- worker-0 中现有 `InfiniCore`、`InfiniLM` 的 editable 安装已改为加载 `H3_PROJECT_ROOT` 指向的源码；新开的容器交互式 Bash 会自动激活 H3 环境。
+- 已打开的容器终端及非交互式脚本应先执行 `source "$H3_PROJECT_ROOT/remote-install/shared-dev/activate-h3-dev.sh"`，再从共享项目目录运行脚本。
+- Python 源码保存后重启程序生效；C++、HIP、算子修改后仍需在容器内重新配置、编译并安装，核对最终加载的库。依赖环境位置由 `H3_DEPS_ROOT` 配置；容器重建或依赖目录迁移后需要恢复环境并运行 `remote-install/shared-dev/repair-relocated-env.py`。
 - 配置、原配置备份及说明位于远程项目 `remote-install/shared-dev/`；验证记录位于远程项目 `audit/共享源码长期开发配置-20261102.md`。首次配置验证了两个包实际从共享目录导入及 InfiniCore 扩展加载，未执行模型推理。
 
 ## 维护

@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
-source /public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/h3-fix/activate.sh
+source "${BASH_SOURCE[0]%/*}/activate.sh"
 cd "$H3_PROJECT_ROOT/InfiniLM"
 xmake f -m release -y
 xmake build -j 24 _infinilm

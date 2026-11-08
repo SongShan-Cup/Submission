@@ -177,8 +177,9 @@ extern "C" int h3_nt_attention(void *stream, H3NTTensor q, H3NTTensor k, H3NTTen
     (out/'h3_nt_attention.cpp').write_text(dispatch)
     (out/'manifest.json').write_text(json.dumps({'ninetoothed':__import__('importlib.metadata').metadata.version('ninetoothed'),'triton':triton.__version__,'variants':variants},indent=2))
     sources=[out/'h3_nt_attention.cpp']+[out/f"{v['name']}.cpp" for v in variants]
+    dtk_root = Path(__import__('os').environ['DTK_ROOT']).resolve()
     subprocess.run(['c++','-shared','-fPIC','-O2','-std=c++17','-D__HIP_PLATFORM_AMD__',
-                    '-I/opt/dtk/include','-L/opt/dtk/lib','-Wl,-rpath,/opt/dtk/lib',
+                    f'-I{dtk_root}/include',f'-L{dtk_root}/lib',f'-Wl,-rpath,{dtk_root}/lib',
                     *map(str,sources),'-lamdhip64','-o',str(out/'libh3_ninetoothed.so')],check=True)
 
 if __name__=='__main__': main()

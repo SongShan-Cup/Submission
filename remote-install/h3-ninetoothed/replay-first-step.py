@@ -5,6 +5,8 @@ import os
 import sys
 from pathlib import Path
 import torch
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'lib'))
+from h3_config import require
 sys.path.insert(0,str(Path('InfiniLM/examples').resolve()))
 import minimax_h3 as entry
 root=Path('audit/20261103-ninetoothed');baseline=Path('audit/20261102-fix')
@@ -19,7 +21,7 @@ def metric(a,b):
  a=a.detach().cpu().double().flatten();b=b.detach().cpu().double().flatten();e=a-b
  return {'finite':bool(torch.isfinite(a).all()),'max_abs_error':e.abs().max().item(),'relative_rmse':(e.square().mean()/b.square().mean()).sqrt().item(),'cosine':torch.nn.functional.cosine_similarity(a,b,dim=0).item()}
 
-paths=entry.resolve_model_paths('/public/home/aclsylqidf/shared/MiniMax-H3/diffusers','fl2va')
+paths=entry.resolve_model_paths(require('H3_MODEL_ROOT'),'fl2va')
 pipe,text,transformer=entry.load_pipeline(paths,'fl2va',list(range(8)),entry.TimingReport(list(range(8))),legacy=False,legacy_text_devices=[0,1,2,3],legacy_transformer_devices=[4,5,6,7],legacy_memory_fraction=.4)
 lib=ctypes.CDLL(os.environ['INFINI_ROOT']+'/lib/libh3_ninetoothed.so')
 count=lib.h3_nt_launch_count;count.argtypes=[ctypes.c_int]*3;count.restype=ctypes.c_uint64

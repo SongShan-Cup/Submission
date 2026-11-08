@@ -2,6 +2,7 @@
 # Install the prepared public+DTK bundle, retaining the system HIP PyTorch.
 set -euo pipefail
 upload_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+source "$upload_dir/lib/load-config.sh"
 : "${IFAB_AFS_HOME:?Personal AFS path is not set}"
 h3_python="${H3_SYSTEM_PYTHON:-/usr/local/bin/python}"
 h3_venv="${H3_VENV:-$IFAB_AFS_HOME/envs/h3}"
@@ -52,8 +53,8 @@ lines = [
     'source ' + shlex.quote(str(venv / 'bin/activate')),
     'export FA_SO_PATH=' + shlex.quote(str(flash)),
     'export FLASH_ATTN_2_CUDA_SO="$FA_SO_PATH"',
-    'export PATH="/opt/dtk/llvm/bin:/opt/dtk/cuda/cuda/bin:/opt/dtk/bin:$PATH"',
-    'export LD_LIBRARY_PATH=' + shlex.quote(str(torch_lib) + ':/opt/dtk/lib:/opt/dtk/cuda/cuda/lib64:') + '"${LD_LIBRARY_PATH:-}"',
+    'export PATH=' + shlex.quote(os.environ['H3_DTK_ROOT'] + '/llvm/bin:' + os.environ['H3_DTK_ROOT'] + '/cuda/cuda/bin:' + os.environ['H3_DTK_ROOT'] + '/bin:$PATH'),
+    'export LD_LIBRARY_PATH=' + shlex.quote(str(torch_lib) + ':' + os.environ['H3_DTK_ROOT'] + '/lib:' + os.environ['H3_DTK_ROOT'] + '/cuda/cuda/lib64:') + '"${LD_LIBRARY_PATH:-}"',
     'export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1',
 ]
 (venv / 'activate-h3.sh').write_text('\n'.join(lines) + '\n')

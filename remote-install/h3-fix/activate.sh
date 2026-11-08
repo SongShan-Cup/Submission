@@ -1,4 +1,4 @@
-source /public/home/aclsylqidf/Projects/minimax-h3-dev/remote-install/shared-dev/activate-h3-dev.sh || return
+source "${BASH_SOURCE[0]%/*}/../shared-dev/activate-h3-dev.sh" || return
 export INFINI_ROOT="$H3_PROJECT_ROOT/remote-install/h3-fix/native"
 case ":${LD_LIBRARY_PATH:-}:" in
     *":$INFINI_ROOT/lib:"*) ;;

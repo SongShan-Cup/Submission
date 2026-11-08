@@ -1,9 +1,11 @@
 import sys,torch
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'lib'))
+from h3_config import require
 sys.path.insert(0,str(Path('InfiniLM/examples').resolve()))
 import minimax_h3 as entry
 root=Path('audit/20261102-fix')
-pipe,text,model=entry.load_pipeline(entry.resolve_model_paths('/public/home/aclsylqidf/shared/MiniMax-H3/diffusers','fl2va'),'fl2va',list(range(8)),entry.TimingReport(list(range(8))),legacy=True,legacy_text_devices=[0,1,2,3],legacy_transformer_devices=[4,5,6,7],legacy_memory_fraction=.4)
+pipe,text,model=entry.load_pipeline(entry.resolve_model_paths(require('H3_MODEL_ROOT'),'fl2va'),'fl2va',list(range(8)),entry.TimingReport(list(range(8))),legacy=True,legacy_text_devices=[0,1,2,3],legacy_transformer_devices=[4,5,6,7],legacy_memory_fraction=.4)
 print('native library loaded?',any('libinfinicore' in x for x in open('/proc/self/maps')),flush=True)
 stages={}
 def pre(m,a):

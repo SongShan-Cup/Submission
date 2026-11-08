@@ -1,9 +1,11 @@
 import sys,json,torch
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'lib'))
+from h3_config import require
 sys.path.insert(0,str(Path('InfiniLM/examples').resolve()))
 import minimax_h3 as entry
 from infinilm.multimodal.minimax_h3 import MiniMaxH3ConditionEncoder
-root=Path('audit/20261102-fix');path='/public/home/aclsylqidf/shared/MiniMax-H3/diffusers/text_encoder'
+root=Path('audit/20261102-fix');path=require('H3_MODEL_ROOT')+'/text_encoder'
 ref=entry.Qwen3VLForConditionalGeneration.from_pretrained(path,dtype=torch.bfloat16,device_map='balanced_low_0',max_memory=entry.make_max_memory([0,1,2,3],.4),local_files_only=True).eval()
 native=MiniMaxH3ConditionEncoder(path,tp_device_ids=list(range(8))).eval()
 inputs=torch.load(root/'native-condition-input.pt',weights_only=False)

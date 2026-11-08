@@ -1,5 +1,6 @@
 set -euo pipefail
-cd /public/home/aclsylqidf/Projects/minimax-h3-dev
+source "${BASH_SOURCE[0]%/*}/activate.sh"
+cd "$H3_PROJECT_ROOT"
 bash remote-install/h3-fix/rebuild-core.sh
 source remote-install/h3-fix/activate.sh
 ulimit -c 0

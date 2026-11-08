@@ -5,13 +5,14 @@
 ## 已验证运行
 
 ```bash
-cd /public/home/aclsylqidf/Projects/minimax-h3-dev
+cd "$H3_PROJECT_ROOT"
 source remote-install/shared-dev/activate-h3-dev.sh
 unset MINIMAX_H3_TRACE_STAGE
 bash remote-install/h3-fix/run-fl2va.sh
 ```
 
-默认使用共享模型权重、`/public/home/aclsylqidf/Golde33443.jpg`、提示词 `A dog falls asleep`、seed 42、8 卡、124 帧、50 步。保持输入比例后输出 768×928、24 fps。结果为 `outputs/20261102-fix/fl2va_50step.mp4`。覆盖参数可追加在脚本后，例如 `--output /绝对路径/文件.mp4`。注意默认路径已有本次验收视频，重新运行可指定新名称。
+默认模型和输入图来自 `remote-install/h3-paths.env` 的 `H3_MODEL_ROOT` 与
+`H3_INPUT_IMAGE`；提示词为 `A dog falls asleep`，seed 42、8 卡、124 帧、50 步。
 
 PyTorch 参照：追加 `--legacy --output /绝对路径/参照视频.mp4`。
 
@@ -22,7 +23,7 @@ bash remote-install/h3-fix/build.sh
 bash remote-install/h3-fix/build-lm.sh
 ```
 
-InfiniCore 安装到项目内 `remote-install/h3-fix/native`，InfiniLM 扩展安装到 `InfiniLM/python/infinilm/lib`。共享激活脚本优先使用该版本；`native/` 不纳入 Git。Python 依赖仍复用容器 `/workspace/h3-deps-20261101`，容器重建后需恢复该环境。
+InfiniCore 安装到项目内 `remote-install/h3-fix/native`，InfiniLM 扩展安装到 `InfiniLM/python/infinilm/lib`。共享激活脚本优先使用该版本；`native/` 不纳入 Git。Python 依赖位置由 `remote-install/h3-paths.env` 的 `H3_DEPS_ROOT` 配置，容器重建或目录迁移后需恢复该环境。
 
 ## 数值检查
 

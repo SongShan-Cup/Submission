@@ -2,6 +2,8 @@
 import sys,json
 from pathlib import Path
 import torch
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'lib'))
+from h3_config import require
 sys.path.insert(0,str(Path('InfiniLM/examples').resolve()))
 import minimax_h3 as entry
 root=Path('audit/20261102-fix')
@@ -13,7 +15,7 @@ def move(x,device):
 def metric(actual,reference):
  a=actual.cpu().double().flatten();b=reference.cpu().double().flatten();e=a-b
  return {'shape':list(actual.shape),'native_finite':bool(torch.isfinite(a).all()),'reference_finite':bool(torch.isfinite(b).all()),'max_abs_error':e.abs().max().item(),'rmse':e.square().mean().sqrt().item(),'relative_rmse':(e.square().mean()/b.square().mean()).sqrt().item(),'cosine':torch.nn.functional.cosine_similarity(a,b,dim=0).item()}
-paths=entry.resolve_model_paths('/public/home/aclsylqidf/shared/MiniMax-H3/diffusers','fl2va')
+paths=entry.resolve_model_paths(require('H3_MODEL_ROOT'),'fl2va')
 pipe,text,transformer=entry.load_pipeline(paths,'fl2va',list(range(8)),entry.TimingReport(list(range(8))),legacy=True,legacy_text_devices=[0,1,2,3],legacy_transformer_devices=[4,5,6,7],legacy_memory_fraction=.4)
 text.eval();transformer.eval()
 report={}

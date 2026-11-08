@@ -21,7 +21,14 @@ InfiniLM → InfiniCore MultiheadAttention → `mha_ninetoothed_hygon.cc` →
 
 ## 构建和选择环境
 
-在远程容器项目根目录运行：
+在远程容器中先按目标机器修改 `remote-install/h3-paths.env`。若项目或依赖目录
+是从旧服务器移动过来的，先运行：
+
+```bash
+"$H3_DEPS_ROOT/venv/bin/python" remote-install/shared-dev/repair-relocated-env.py
+```
+
+然后在项目根目录运行：
 
 ```bash
 bash remote-install/h3-ninetoothed/build.sh

@@ -1,10 +1,13 @@
 import os,json,torch
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'lib'))
+from h3_config import require
 from infinilm.multimodal.minimax_h3 import MiniMaxH3TransformerRunner,MiniMaxH3TransformerInputs
 root=Path('audit/20261102-fix');data=torch.load(root/'native-first-input.pt',weights_only=False)['kwargs'];ref=torch.load(root/'reference-stages.pt',weights_only=False)
 data['video_hidden_states']=data.pop('hidden_states');data={k:v.to('cuda:0') for k,v in data.items() if k in MiniMaxH3TransformerInputs.__dataclass_fields__}
 inputs=MiniMaxH3TransformerInputs(**data)
-runner=MiniMaxH3TransformerRunner('/public/home/aclsylqidf/shared/MiniMax-H3/diffusers/transformer',tp_device_ids=list(range(8)))
+runner=MiniMaxH3TransformerRunner(require('H3_MODEL_ROOT')+'/transformer',tp_device_ids=list(range(8)))
 def metrics(a,b):
  a=a.cpu().double();b=b.cpu().double();e=a-b
  return {'max_abs':e.abs().max().item(),'rel_rmse':(e.square().mean()/b.square().mean()).sqrt().item(),'cosine':torch.nn.functional.cosine_similarity(a.flatten(),b.flatten(),dim=0).item()}
