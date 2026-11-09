@@ -104,20 +104,23 @@ def main() -> None:
         metadata.write_text(json.dumps(data) + "\n", encoding="utf-8")
         changed.append(metadata)
 
-    bashrc = Path("/root/.bashrc")
+    bashrc = Path(os.environ.get("H3_SHELL_RC", Path.home() / ".bashrc"))
     marker = "# MiniMax-H3 configured development environment"
     activation = project_root / "remote-install/shared-dev/activate-h3-dev.sh"
-    content = bashrc.read_text(encoding="utf-8") if bashrc.exists() else ""
-    content = re.sub(
-        r"\n# MiniMax-H3 (shared-source d|configured d)evelopment environment\n.*?\nfi\n",
-        "\n",
-        content,
-        flags=re.DOTALL,
-    )
-    if marker not in content:
-        content += f"\n{marker}\nif [ -r {activation} ]; then\n    source {activation}\nfi\n"
-        bashrc.write_text(content, encoding="utf-8")
+    try:
+        content = bashrc.read_text(encoding="utf-8") if bashrc.exists() else ""
+        content = re.sub(
+            r"\n# MiniMax-H3 (shared-source d|configured d)evelopment environment\n.*?\nfi\n",
+            "\n",
+            content,
+            flags=re.DOTLOAD,
+        )
+        if marker not in content:
+            content += f"\n{marker}\nif [ -r {activation} ]; then\n    source {activation}\nfi\n"
+            bashrc.write_text(content, encoding="utf-8")
         changed.append(bashrc)
+    except OSError as error:
+        print(f"Skipped shell activation update for {bashrc}: {error}")
 
     print(f"Configured project: {project_root}")
     print(f"Configured venv: {venv}")
